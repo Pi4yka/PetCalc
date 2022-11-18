@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Калькулятор</string>
+    <string name="pet_height">Длина спинки</string>
+    <string name="Main_text">Введите параметры питомца</string>
+    <string name="name">Кличка</string>
+    <string name="coverage_neck">Охват шеи</string>
+    <string name="coverage_body">Охват груди</string>
+    <string name="calculate">Рассчитать</string>
+    <string name="size_your_pet">Размер вашего питомца</string>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PetCalc</string>
+    <string name="pet_height">Pet Height</string>
+    <string name="Main_text">Enter pet config</string>
+    <string name="name">Name</string>
+    <string name="coverage_neck">Coverage Neck</string>
+    <string name="coverage_body">Coverage Body</string>
+    <string name="calculate">Calculate</string>
+    <string name="size_your_pet">Size your pet</string>
+</resources>

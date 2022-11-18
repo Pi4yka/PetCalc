@@ -1,5 +1,6 @@
 package com.example.petcalc
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var height: EditText
     lateinit var textsize: TextView
     lateinit var size_net: TextView
+    lateinit var Main_text: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,29 +36,32 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("ShowToast")
     private fun set_calculate(): String? {
         val n = neck.text.toString()
         val b = body.text.toString()
         val h = height.text.toString()
 
         if (n.trim().isNotEmpty() && b.trim().isNotEmpty() && h.trim().isNotEmpty()) {
-            textsize.text = "Size your pet" // С visibility не разобрался до конца, поэтому костыль
+            textsize.text = "Size your pet" // С visibility не разобрался, поэтому костыль
             when {
-                b.toInt() in 28..36 && n.toInt() in 18..22 && h.toInt() >= 20 -> return "XS"
-                b.toInt() in 36..40 && n.toInt() in 22..26 && h.toInt() >= 26 -> return "S"
-                b.toInt() in 40..46 && n.toInt() in 26..30 && h.toInt() >= 30 -> return "M"
-                b.toInt() in 46..50 && n.toInt() in 30..34 && h.toInt() >= 36 -> return "L"
-                b.toInt() >= 50 && n.toInt() >= 34 && h.toInt() >= 40 -> return "XL"
-                else -> return "Error37"
+                b.toInt() in 28..36 || n.toInt() in 18..22 && h.toInt() >= 20 -> return "XS"
+                b.toInt() in 36..40 || n.toInt() in 22..26 && h.toInt() >= 26 -> return "S"
+                b.toInt() in 40..46 || n.toInt() in 26..30 && h.toInt() >= 30 -> return "M"
+                b.toInt() in 46..50 || n.toInt() in 30..34 && h.toInt() >= 36 -> return "L"
+                b.toInt() >= 50 || n.toInt() >= 34 && h.toInt() >= 40 -> return "XL"
+                else -> return "Не могу вычислить"
             }
         } else {
-            val text_alarm = "Введите все размеры!"
+            val text_alarm = "Введите размеры!"
             val duration = Toast.LENGTH_SHORT
             val toast = Toast.makeText(applicationContext, text_alarm, duration)
-            toast.setGravity(Gravity.CENTER, 0, 0)  // Я пытался вывести через тост, тоже не работает, буду искать еще инфу
+            toast.setGravity(Gravity.CENTER, 0, 0)
+            toast.show()
             return null
         }
 
     }
+
 
 }

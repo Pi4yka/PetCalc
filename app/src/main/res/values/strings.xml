@@ -6,5 +6,6 @@
     <string name="coverage_neck">Coverage Neck</string>
     <string name="coverage_body">Coverage Body</string>
     <string name="calculate">Calculate</string>
-    <string name="size_your_pet">Size your pet</string>
+    <string name="size_title">Size your pet</string>
+    <string name="enter_sizes">Enter Sizes!</string>
 </resources>

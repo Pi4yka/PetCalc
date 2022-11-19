@@ -7,5 +7,6 @@
     <string name="coverage_neck">Охват шеи</string>
     <string name="coverage_body">Охват груди</string>
     <string name="calculate">Рассчитать</string>
-    <string name="size_your_pet">Размер вашего питомца</string>
+    <string name="size_title">Размер вашего питомца</string>
+    <string name="enter_sizes">Введите размеры!</string>
 </resources>

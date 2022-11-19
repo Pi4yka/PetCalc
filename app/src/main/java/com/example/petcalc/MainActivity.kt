@@ -1,11 +1,12 @@
 package com.example.petcalc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var heightET: EditText
     private lateinit var sizeTextView: TextView
     private lateinit var sizeValueTextView: TextView
+    private lateinit var dogeImageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +30,12 @@ class MainActivity : AppCompatActivity() {
         neckET = findViewById(R.id.neckEditText)
         bodyET = findViewById(R.id.bodyEditText)
         heightET = findViewById(R.id.heightEditText)
+        dogeImageView = findViewById(R.id.dogeImageView)
 
+        dogeImageView.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            this.startActivity(intent)
+        }
         calcButton.setOnClickListener { onCalculateClicked() }
     }
 

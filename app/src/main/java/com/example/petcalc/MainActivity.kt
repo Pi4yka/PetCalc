@@ -9,6 +9,8 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var sizeTextView: TextView
     private lateinit var sizeValueTextView: TextView
     private lateinit var dogeImageView: ImageView
+    private lateinit var bottomNavBar: BottomNavigationView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +35,27 @@ class MainActivity : AppCompatActivity() {
         bodyET = findViewById(R.id.bodyEditText)
         heightET = findViewById(R.id.heightEditText)
         dogeImageView = findViewById(R.id.dogeImageView)
+        bottomNavBar = findViewById(R.id.bottomNavBar)
 
         dogeImageView.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             this.startActivity(intent)
         }
         calcButton.setOnClickListener { onCalculateClicked() }
+
+        var firstFragment = FirstFragment()
+        var secondFragment = SecondFragment()
+        var thirdFragment = ThirdFragment()
+
+        setCurrentFragment(firstFragment)
+        bottomNavBar.setOnNavigationItemSelectedListener{
+            when(it.itemId){
+                R.id.homeIc->setCurrentFragment(firstFragment)
+                R.id.personIc->setCurrentFragment(secondFragment)
+                R.id.settingsIc->setCurrentFragment(thirdFragment)
+            }
+            true
+        }
     }
 
     private fun onCalculateClicked() {
@@ -73,4 +92,11 @@ class MainActivity : AppCompatActivity() {
             else -> "Не могу вычислить"
         }
     }
+
+    private fun setCurrentFragment(
+        fragment: Fragment
+    )= supportFragmentManager.beginTransaction().apply {
+            replace(R.id.flFragment,fragment)
+            commit()
+        }
 }

@@ -8,4 +8,9 @@
     <string name="calculate">Calculate</string>
     <string name="size_title">Size your pet</string>
     <string name="enter_sizes">Enter Sizes!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="first_fragment_title">First Fragment</string>
+    <string name="second_fragment_title">Second Fragment</string>
+    <string name="third_fragment_title">Third Fragment</string>
+
 </resources>

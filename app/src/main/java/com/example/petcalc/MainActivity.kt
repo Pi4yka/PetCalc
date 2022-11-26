@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var sizeTextView: TextView
     private lateinit var sizeValueTextView: TextView
     private lateinit var dogeImageView: ImageView
-    private lateinit var bottomNavBar: BottomNavigationView
+    private lateinit var bottomNavigationView: BottomNavigationView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,20 +35,22 @@ class MainActivity : AppCompatActivity() {
         bodyET = findViewById(R.id.bodyEditText)
         heightET = findViewById(R.id.heightEditText)
         dogeImageView = findViewById(R.id.dogeImageView)
-        bottomNavBar = findViewById(R.id.bottomNavBar)
+        bottomNavigationView = findViewById(R.id.bottomNavigationView)
 
         dogeImageView.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             this.startActivity(intent)
         }
+
         calcButton.setOnClickListener { onCalculateClicked() }
 
-        var firstFragment = FirstFragment()
-        var secondFragment = SecondFragment()
-        var thirdFragment = ThirdFragment()
+        val firstFragment = FirstFragment()
+        val secondFragment = SecondFragment()
+        val thirdFragment = ThirdFragment()
 
         setCurrentFragment(firstFragment)
-        bottomNavBar.setOnNavigationItemSelectedListener{
+
+        bottomNavigationView.setOnItemSelectedListener{
             when(it.itemId){
                 R.id.homeIc->setCurrentFragment(firstFragment)
                 R.id.personIc->setCurrentFragment(secondFragment)

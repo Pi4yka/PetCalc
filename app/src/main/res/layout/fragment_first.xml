@@ -1,18 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FirstFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/firstFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/first_fragment_title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        />
+    <ImageView
+        android:id="@+id/dogeImageView"
+        android:layout_width="120dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/dog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/mainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/Main_text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dogeImageView" />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/name"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainText" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_et_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/nameText"
+        app:layout_constraintStart_toEndOf="@+id/nameText"
+        app:layout_constraintTop_toTopOf="@+id/nameText" />
+
+    <TextView
+        android:id="@+id/neckText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/coverage_neck"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
+    <EditText
+        android:id="@+id/neckEditText"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_et_margin"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toBottomOf="@+id/neckText"
+        app:layout_constraintStart_toEndOf="@+id/neckText"
+        app:layout_constraintTop_toTopOf="@+id/neckText"
+        app:layout_constraintVertical_bias="0.888" />
+
+
+    <TextView
+        android:id="@+id/bodyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/coverage_body"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/neckText" />
+
+    <TextView
+        android:id="@+id/heightText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pet_height"
+        android:textSize="@dimen/default_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bodyText" />
+
+    <EditText
+        android:id="@+id/heightEditText"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_et_margin"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toBottomOf="@+id/heightText"
+        app:layout_constraintStart_toEndOf="@+id/heightText"
+        app:layout_constraintTop_toTopOf="@+id/heightText" />
+
+
+    <EditText
+        android:id="@+id/bodyEditText"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_et_margin"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toBottomOf="@+id/bodyText"
+        app:layout_constraintStart_toEndOf="@+id/bodyText"
+        app:layout_constraintTop_toTopOf="@+id/bodyText" />
+
+
+    <Button
+        android:id="@+id/calcuclateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/sizeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/size_title"
+        android:textSize="@dimen/default_text_size"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightEditText"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/sizeValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="48sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/calcuclateBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sizeText"
+        tools:text="M"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -19,9 +19,9 @@ class MainActivity : AppCompatActivity() {
         setCurrentFragment(firstFragment)
         bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.homeIc -> setCurrentFragment(firstFragment)
-                R.id.personIc -> setCurrentFragment(secondFragment)
-                R.id.settingsIc -> setCurrentFragment(thirdFragment)
+                R.id.calculateIc -> setCurrentFragment(firstFragment)
+                R.id.listIc -> setCurrentFragment(secondFragment)
+                R.id.diabloIc -> setCurrentFragment(thirdFragment)
             }
             true
         }

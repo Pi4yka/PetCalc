@@ -17,42 +17,41 @@ sealed class Dog(
         override val color: Color,
         override val name: String
     ) : Dog(name = name)
+
+    data class Toyterrier(
+        override val size: String?,
+        override val color: Color,
+        override val name: String
+    ) : Dog(name = name)
+
+    data class Alabay(
+        override val size: String?,
+        val killpersecond: Int,
+        override val color: Color,
+        override val name: String
+    ) : Dog(name = name)
+
+    data class Corgi(
+        override val size: String?,
+        val bread: String,
+        override val color: Color,
+        override val name: String
+    ) : Dog(name = name)
 }
 
 val zevs = Dog.Ovcharka("XL", ohrana = 10, name = "zevs", color = Color.BLACK)
 val kasper = Dog.Dvornyaga("M", name = "kasper", color = Color.BLACK)
+val tom = Dog.Toyterrier("S", name = "tom", color = Color.BROWN)
+val demon = Dog.Alabay("XXL", name = "demon", color=Color.GREEN, killpersecond = 100)
+val andreas = Dog.Corgi("M", name = "anreas", color = Color.WHITE, bread = "pie")
 
-val list: List<Dog> = listOf(
-    zevs, kasper
-)
 
-
-fun getDvornyag(list: List<Dog>?) {
-    list?.forEach {
-        when (it) {
-            is Dog.Dvornyaga -> TODO()
-            is Dog.Ovcharka -> TODO()
-        }
-    }
-
-    val response = Response(dogId = 1, dogName = null)
-    val result = DogView(
-        name = response.dogName ?: "kasper"
-    )
-}
-
-data class Response(
-    val dogId: Int,
-    val dogName: String?
-)
-
-data class DogView(
-    val name: String
-)
-
+//val list: List<Dog> = listOf(
+//    zevs, kasper, tom, demon, andreas
+//)
 
 enum class Color {
-    RED, BLUE, BLACK
+    RED, BLUE, BLACK, BROWN, GREEN, WHITE
 }
 
 

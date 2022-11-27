@@ -15,7 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetCalc"
         tools:targetApi="31">
-
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
@@ -25,9 +24,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".SecondActivity"
-            android:screenOrientation="portrait">
         </activity>
     </application>
 

@@ -24,7 +24,6 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
         neckET = view.findViewById(R.id.neckEditText)
         bodyET = view.findViewById(R.id.bodyEditText)
         heightET = view.findViewById(R.id.heightEditText)
-        dogeImageView = view.findViewById(R.id.dogeImageView)
 
         calcButton.setOnClickListener { onCalculateClicked() }
     }

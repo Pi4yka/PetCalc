@@ -13,7 +13,7 @@
     <item
         android:id="@+id/diabloIc"
         android:title="Classes"
-        android:icon="@drawable/diablo_skull"
+        android:icon="@drawable/ic_home_foreground"
         />
 
 </menu>

@@ -1,10 +1,10 @@
-package com.example.petcalc
+package com.example.petcalc.screen.first
 
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.fragment.app.Fragment
-import com.example.petcalc.model.Dog
+import com.example.petcalc.R
 
 class FirstFragment : Fragment(R.layout.fragment_first) {
 

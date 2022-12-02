@@ -3,6 +3,8 @@ package com.example.petcalc
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.petcalc.screen.first.FirstFragment
+import com.example.petcalc.screen.second.SecondFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

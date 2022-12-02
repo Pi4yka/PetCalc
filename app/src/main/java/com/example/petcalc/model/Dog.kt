@@ -70,14 +70,69 @@ sealed class Dog(
     ) : Dog(name = name, breed = breed, image = image)
 }
 
-val zevs = Dog.Ovcharka("XL", ohrana = 10, name = "Zevs", color = Color.BROWN, breed = "Ovcharka", image = R.drawable.ovcharka)
-val kasper = Dog.Dvornyaga("M", name = "Kasper", color = Color.BLACK, breed = "Dvornyaga", image = R.drawable.kasper)
-val maya = Dog.Toyterrier("XL", name = "Maya", color = Color.BLACK, breed = "Toyterrier", image = R.drawable.maya)
-val demon = Dog.Alabay("XXL", name = "Demon", color= Color.GREEN, killpersecond = 100, breed = "Alabay", image = R.drawable.alabay)
-val andreas = Dog.Corgi("M", name = "Andreas", color = Color.BROWN, bread = "pie", breed = "Corgi", image = R.drawable.corgi)
-val busya = Dog.Bulldog("L", name = "Busya", color = Color.GREY, breed = "Bulldog", image = R.drawable.bulldog)
-val knopa = Dog.Chihuahua("XS", name = "Knopa", color = Color.BLUE, breed = "Chihuahua", image = R.drawable.chihuahua)
-val tom = Dog.Toyterrier("S", name = "Tom", color = Color.GREEN, breed = "Toyterrier", image = R.drawable.toyterrier)
+fun getMockDogList(): List<Dog> {
+    return listOf(
+        Dog.Ovcharka(
+            "XL",
+            ohrana = 10,
+            name = "Zevs",
+            color = Color.BROWN,
+            breed = "Ovcharka",
+            image = R.drawable.ovcharka
+        ),
+        Dog.Dvornyaga(
+            "M",
+            name = "Kasper",
+            color = Color.BLACK,
+            breed = "Dvornyaga",
+            image = R.drawable.kasper
+        ),
+        Dog.Toyterrier(
+            "XL",
+            name = "Maya",
+            color = Color.BLACK,
+            breed = "Toyterrier",
+            image = R.drawable.maya
+        ),
+        Dog.Alabay(
+            "XXL",
+            name = "Demon",
+            color = Color.GREEN,
+            killpersecond = 100,
+            breed = "Alabay",
+            image = R.drawable.alabay
+        ),
+        Dog.Corgi(
+            "M",
+            name = "Andreas",
+            color = Color.BROWN,
+            bread = "pie",
+            breed = "Corgi",
+            image = R.drawable.corgi
+        ),
+        Dog.Bulldog(
+            "L",
+            name = "Busya",
+            color = Color.GREY,
+            breed = "Bulldog",
+            image = R.drawable.bulldog
+        ),
+        Dog.Chihuahua(
+            "XS",
+            name = "Knopa",
+            color = Color.BLUE,
+            breed = "Chihuahua",
+            image = R.drawable.chihuahua
+        ),
+        Dog.Toyterrier(
+            "S",
+            name = "Tom",
+            color = Color.GREEN,
+            breed = "Toyterrier",
+            image = R.drawable.toyterrier
+        ),
+    )
+}
 
 enum class Color {
     BLACK, BROWN, WHITE, GREEN, BLUE, GREY

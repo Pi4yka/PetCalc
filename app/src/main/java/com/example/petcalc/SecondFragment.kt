@@ -10,19 +10,23 @@ import androidx.recyclerview.widget.RecyclerView
 
 class SecondFragment: Fragment(R.layout.fragment_second) {
 
+    lateinit var dogAdapter: DogAdapter
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.dog_list)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         recyclerView.adapter = DogAdapter(fillList())
+//        dogAdapter.onItemClick =
     }
 
     private fun fillList(): List<Dog> {
         val data: List<Dog> = listOf(
-            zevs, kasper, tom, demon, andreas
+            zevs, kasper, maya, tom, demon, andreas, busya, knopa
         )
         return data
-
     }
+
+
 }

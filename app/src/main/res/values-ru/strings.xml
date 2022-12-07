@@ -12,4 +12,5 @@
     <string name="first_fragment_title">Первый фрагмент</string>
     <string name="second_fragment_title">Второй фрагмент</string>
     <string name="third_fragment_title">Третий фрагмент</string>
+    <string name="add">Добавить</string>
 </resources>

@@ -7,8 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petcalc.R
+import com.example.petcalc.databinding.DogListItemBinding
 import com.example.petcalc.model.Dog
 
 
@@ -18,20 +20,12 @@ class DogAdapter(
 
     private var dogList: MutableList<Dog> = mutableListOf()
 
-    var onItemClick: ((Dog, Int) -> Unit)? = null // обоссаные штаны
+    private var onItemClick: ((Dog, Int) -> Unit)? = null // обоссаные штаны // теперь нет
 
-    class DogViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val dogNameText: TextView = itemView.findViewById(R.id.dogName)
-        val dogBreedText: TextView = itemView.findViewById(R.id.dogBreed)
-        val dogColorLayout: CardView = itemView.findViewById(R.id.dogLayout)
-        val dogConstraint: ConstraintLayout = itemView.findViewById(R.id.dogConstraint)
-        val dogImageView: ImageView = itemView.findViewById(R.id.dogImage)
-    }
+    class DogViewHolder(val binding: DogListItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DogViewHolder {
-        val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.dog_list_item, parent, false)
-        return DogViewHolder(itemView)
+        return DogViewHolder(DogListItemBinding.inflate(LayoutInflater.from(parent.context),parent, false))
     }
 
     override fun onBindViewHolder(holder: DogViewHolder, position: Int) {
@@ -46,10 +40,10 @@ class DogAdapter(
             else -> R.color.purple_200
         }
 
-        holder.dogNameText.text = dogItem.name
-        holder.dogBreedText.text = dogItem.breed
-        holder.dogImageView.setImageResource(dogItem.image)
-        holder.dogConstraint.setBackgroundResource(colorResource)
+        holder.binding.dogName.text = dogItem.name
+        holder.binding.dogBreed.text = dogItem.breed
+        holder.binding.dogImage.setImageResource(dogItem.image)
+        holder.binding.dogConstraint.setBackgroundResource(colorResource)
 
         holder.itemView.setOnClickListener {
             this.onDogClickListener.onDogClicked(dogItem, position)
@@ -66,6 +60,5 @@ class DogAdapter(
     }
 
     override fun getItemCount() = dogList.size
-
 
 }

@@ -5,41 +5,29 @@ import android.view.View
 import android.widget.*
 import androidx.fragment.app.Fragment
 import com.example.petcalc.R
+import com.example.petcalc.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment(R.layout.fragment_first) {
 
-    private lateinit var calcButton: Button
-    private lateinit var neckET: EditText
-    private lateinit var bodyET: EditText
-    private lateinit var heightET: EditText
-    private lateinit var sizeTextView: TextView
-    private lateinit var sizeValueTextView: TextView
-    private lateinit var dogeImageView: ImageView
+    private lateinit var bindingFragmentFirst: FragmentFirstBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        calcButton = view.findViewById(R.id.calcuclateBtn)
-        sizeTextView = view.findViewById(R.id.sizeText)
-        sizeValueTextView = view.findViewById(R.id.sizeValueText)
-        neckET = view.findViewById(R.id.neckEditText)
-        bodyET = view.findViewById(R.id.bodyEditText)
-        heightET = view.findViewById(R.id.heightEditText)
-
-        calcButton.setOnClickListener { onCalculateClicked() }
+        bindingFragmentFirst = FragmentFirstBinding.bind(view)
+        bindingFragmentFirst.calcuclateBtn.setOnClickListener { onCalculateClicked() }
     }
 
-
     private fun onCalculateClicked() {
-        val neckSize = neckET.text.toString()
-        val bodySize = bodyET.text.toString()
-        val height = heightET.text.toString()
+        val neckSize = bindingFragmentFirst.neckEditText.text.toString()
+        val bodySize = bindingFragmentFirst.bodyEditText.text.toString()
+        val height = bindingFragmentFirst.heightEditText.text.toString()
 
         if (neckSize.trim().isNotEmpty() && bodySize.trim().isNotEmpty() && height.trim()
                 .isNotEmpty()
         ) {
-            sizeTextView.visibility = View.VISIBLE
-            sizeValueTextView.visibility = View.VISIBLE
-            sizeValueTextView.text = getSizeValue(
+            bindingFragmentFirst.sizeText.visibility = View.VISIBLE
+            bindingFragmentFirst.sizeValueText.visibility = View.VISIBLE
+            bindingFragmentFirst.sizeValueText.text = getSizeValue(
                 neckSize = neckSize.toInt(),
                 bodySize = bodySize.toInt(),
                 height = height.toInt()

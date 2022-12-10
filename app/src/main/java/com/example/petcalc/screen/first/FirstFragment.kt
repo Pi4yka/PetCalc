@@ -1,5 +1,6 @@
 package com.example.petcalc.screen.first
 
+import android.os.AsyncTask
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -10,6 +11,11 @@ import com.example.petcalc.databinding.FragmentFirstBinding
 class FirstFragment : Fragment(R.layout.fragment_first) {
 
     private lateinit var bindingFragmentFirst: FragmentFirstBinding
+    // Написать вью модель под первый фрагмент FistViewModel
+    // сделать в ней метод getSizeValue в viewModelScope
+    // Посмотреть видосы про Dependency Injection (DI) (HILT)
+    // заинжектить вбюмодель в фаргмент
+    // по клику вызвать метод из вьюмодели
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -51,4 +57,5 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
             else -> "Не могу вычислить"
         }
     }
+
 }

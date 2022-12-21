@@ -10,18 +10,29 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class FirstFragmentViewModel(): ViewModel() {
+@HiltViewModel
+class FirstFragmentViewModel @Inject constructor(
+    neckSize: Int,
+    bodySize: Int,
+    height: Int) : ViewModel() {
 
     init{
         Log.d("TEST", "ViewModel is init")
     }
 
-    fun getSize(neckSize: Int,
-                bodySize: Int,
-                height: Int): String{
-//        viewModelScope.launch {
-//            fun getSizeValue(
-//            ): String {
+    fun showSize(
+        neckSize: Int,
+        bodySize: Int,
+        height: Int){
+        viewModelScope.launch {
+                val size = getSize(neckSize,bodySize,height)
+            }
+        }
+
+    fun getSize(
+        neckSize: Int,
+        bodySize: Int,
+        height: Int): String{
                 return when {
                     bodySize in 28..36 || neckSize in 18..22 && height >= 20 -> "XS"
                     bodySize in 36..40 || neckSize in 22..26 && height >= 26 -> "S"
@@ -30,8 +41,6 @@ class FirstFragmentViewModel(): ViewModel() {
                     bodySize >= 50 || neckSize >= 34 && height >= 40 -> "XL"
                     else -> "Не могу вычислить"
                 }
-          //  }
-//        }
     }
 
 

@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.example.petcalc.R
 import com.example.petcalc.databinding.FragmentFirstBinding
 
@@ -16,12 +17,12 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
 
     // Написать вью модель под первый фрагмент FirstViewModel ----
 
-    // сделать в ней метод getSizeValue в viewModelScope
-
-    // Посмотреть видосы про Solid!!!, Dependency Injection (DI) (HILT) ?????
-
+    // сделать в ней метод getSizeValue в viewModelScope ----
     // заинжектить въюмодель в фаргмент
     // по клику вызвать метод из вьюмодели
+    // Посмотреть видосы про Solid!!!, Dependency Injection (DI) (HILT)
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -45,7 +46,7 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
                 neckSize = neckSize.toInt(),
                 bodySize = bodySize.toInt(),
                 height = height.toInt()
-            )
+            ).toString()
         } else {
             Toast.makeText(requireContext(), R.string.enter_sizes, Toast.LENGTH_SHORT).show()
         }

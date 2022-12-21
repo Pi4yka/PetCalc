@@ -1,19 +1,25 @@
 package com.example.petcalc
 
+import android.app.Application
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.petcalc.databinding.ActivityMainBinding
 import com.example.petcalc.screen.first.FirstFragment
+import com.example.petcalc.screen.first.FirstFragmentViewModel
 import com.example.petcalc.screen.second.SecondFragment
 import com.example.petcalc.screen.third.ThirdFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var bindingMainBinding: ActivityMainBinding
     private lateinit var bottomNavigationView: BottomNavigationView
-//    private lateinit var bindingBottomNavigationView: BottomNavigationView
+    private lateinit var viewModel: FirstFragmentViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         val firstFragment = FirstFragment()
         val secondFragment = SecondFragment()
         val thirdFragment = ThirdFragment()
+
         setCurrentFragment(firstFragment)
         bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {

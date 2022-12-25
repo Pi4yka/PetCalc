@@ -5,15 +5,17 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.*
 import com.example.petcalc.R
 import com.example.petcalc.databinding.FragmentFirstBinding
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 class FirstFragment : Fragment(R.layout.fragment_first) {
 
     private lateinit var bindingFragmentFirst: FragmentFirstBinding
-    private lateinit var vm: FirstFragmentViewModel
+    private val viewModel: FirstFragmentViewModel by viewModels()
 
     // Написать вью модель под первый фрагмент FirstViewModel ----
 
@@ -23,13 +25,15 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
     // Посмотреть видосы про Solid!!!, Dependency Injection (DI) (HILT)
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d("TEST", "Fragment created")
         bindingFragmentFirst = FragmentFirstBinding.bind(view)
+        val sizeResultObserver = Observer<String> { sizeResult ->
+            bindingFragmentFirst.sizeValueText.text = sizeResult
+        }
+        viewModel.sizeResult.observe(viewLifecycleOwner, sizeResultObserver)
         bindingFragmentFirst.calcuclateBtn.setOnClickListener { onCalculateClicked() }
-        vm = ViewModelProvider(this).get(FirstFragmentViewModel::class.java)
     }
 
     private fun onCalculateClicked() {
@@ -42,16 +46,15 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
         ) {
             bindingFragmentFirst.sizeText.visibility = View.VISIBLE
             bindingFragmentFirst.sizeValueText.visibility = View.VISIBLE
-            bindingFragmentFirst.sizeValueText.text = vm.getSize(
+            viewModel.getSize(
                 neckSize = neckSize.toInt(),
                 bodySize = bodySize.toInt(),
                 height = height.toInt()
-            ).toString()
+            )
         } else {
             Toast.makeText(requireContext(), R.string.enter_sizes, Toast.LENGTH_SHORT).show()
         }
     }
-
 
 
 }

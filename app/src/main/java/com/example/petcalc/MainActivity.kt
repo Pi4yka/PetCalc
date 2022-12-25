@@ -12,14 +12,14 @@ import com.example.petcalc.screen.first.FirstFragmentViewModel
 import com.example.petcalc.screen.second.SecondFragment
 import com.example.petcalc.screen.third.ThirdFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var bindingMainBinding: ActivityMainBinding
     private lateinit var bottomNavigationView: BottomNavigationView
-    private lateinit var viewModel: FirstFragmentViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

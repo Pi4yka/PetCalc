@@ -1,6 +1,6 @@
 package com.example.petcalc.data.entity
 
-data class ImageByBreedResponse(
+data class ImageResponse(
   val message: String,
   val status: String
 )

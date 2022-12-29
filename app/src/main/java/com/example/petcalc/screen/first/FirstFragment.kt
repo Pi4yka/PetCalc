@@ -9,30 +9,24 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.*
 import com.example.petcalc.R
 import com.example.petcalc.databinding.FragmentFirstBinding
-import kotlinx.coroutines.launch
-import javax.inject.Inject
+
 
 class FirstFragment : Fragment(R.layout.fragment_first) {
 
     private lateinit var bindingFragmentFirst: FragmentFirstBinding
     private val viewModel: FirstFragmentViewModel by viewModels()
 
-    // Написать вью модель под первый фрагмент FirstViewModel ----
-
-    // сделать в ней метод getSizeValue в viewModelScope ----
-    // заинжектить въюмодель в фаргмент
-    // по клику вызвать метод из вьюмодели
-    // Посмотреть видосы про Solid!!!, Dependency Injection (DI) (HILT)
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d("TEST", "Fragment created")
         bindingFragmentFirst = FragmentFirstBinding.bind(view)
+
         val sizeResultObserver = Observer<String> { sizeResult ->
             bindingFragmentFirst.sizeValueText.text = sizeResult
         }
+
         viewModel.sizeResult.observe(viewLifecycleOwner, sizeResultObserver)
+
         bindingFragmentFirst.calcuclateBtn.setOnClickListener { onCalculateClicked() }
     }
 

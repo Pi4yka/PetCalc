@@ -8,7 +8,6 @@ import com.example.petcalc.model.*
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petcalc.screen.second.adapter.DogAdapter
 import com.example.petcalc.R
-import com.example.petcalc.databinding.FragmentFirstBinding
 import com.example.petcalc.databinding.FragmentSecondBinding
 import com.example.petcalc.screen.second.adapter.DogClickListener
 

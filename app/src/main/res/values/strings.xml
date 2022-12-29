@@ -12,6 +12,6 @@
     <string name="first_fragment_title">First Fragment</string>
     <string name="second_fragment_title">Second Fragment</string>
     <string name="third_fragment_title">Third Fragment</string>
-    <string name="add">ADD</string>
+    <string name="add">Zasobachit</string>
 
 </resources>

@@ -8,10 +8,157 @@
     <string name="calculate">Calculate</string>
     <string name="size_title">Size your pet</string>
     <string name="enter_sizes">Enter Sizes!</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="first_fragment_title">First Fragment</string>
     <string name="second_fragment_title">Second Fragment</string>
     <string name="third_fragment_title">Third Fragment</string>
     <string name="add">Zasobachit</string>
-
+    <string-array name="breedNames">
+        <item> AFFENPINSCHER </item>
+        <item>    AFRICAN </item>
+        <item>    AIREDALE</item>
+        <item>AKITA</item>
+        <item>APPENZELLER</item>
+        <item>AUSTRALIANSHEPHERD</item>
+        <item>BASENJI</item>
+        <item>BEAGLE</item>
+        <item>BLUETICK</item>
+        <item>BORZOI</item>
+        <item>BOUVIER</item>
+        <item>BOXER</item>
+        <item>BRABANCON</item>
+        <item>BRIARD</item>
+        <item>BUHUNDNORWEGIAN</item>
+        <item>   BULLDOGBOSTON</item>
+        <item> BULLDOGENGLISH</item>
+        <item> BULLDOGFRENCH</item>
+        <item>   BULLTERRIERSTAFFORDSHIRE</item>
+        <item> CATTLEDOGAUSTRALIAN</item>
+        <item>  CHIHUAHUA</item>
+        <item>  CHOW</item>
+        <item>  CLUMBER</item>
+        <item> COCKAPOO</item>
+        <item>  COLLIEBORDER</item>
+        <item> COONHOUND</item>
+        <item>  CORGICARDIGAN</item>
+        <item> COTONDETULEAR</item>
+        <item> DACHSHUND</item>
+        <item> DALMATIAN</item>
+        <item>  DANEGREAT</item>
+        <item> DEERHOUNDSCOTTISH</item>
+        <item>   DHOLE</item>
+        <item> DINGO</item>
+        <item>  DOBERMAN</item>
+        <item>   ELKHOUNDNORWEGIAN</item>
+        <item>  ENTLEBUCHER</item>
+        <item>  ESKIMO</item>
+        <item> FINNISHLAPPHUND</item>
+        <item>  FRISEBICHON</item>
+        <item>  GERMANSHEPHERD</item>
+        <item> GREYHOUNDITALIAN</item>
+        <item>  GROENENDAEL</item>
+        <item> HAVANESE</item>
+        <item> HOUNDAFGHAN </item>
+        <item>  HOUNDBASSET</item>
+        <item>HOUNDBLOOD</item>
+        <item> HOUNDENGLISH</item>
+        <item>HOUNDIBIZAN</item>
+        <item>HOUNDPLOTT</item>
+        <item>HOUNDWALKER</item>
+        <item>HUSKY</item>
+        <item>KEESHOND</item>
+        <item>KELPIE</item>
+        <item>KOMONDOR</item>
+        <item>KUVASZ</item>
+        <item>LABRADOODLE</item>
+        <item>LABRADOR</item>
+        <item>LEONBERG</item>
+        <item>LHASA</item>
+        <item>MALAMUTE</item>
+        <item>MALINOIS</item>
+        <item>MALTESE</item>
+        <item>MASTIFFBULL</item>
+        <item>MASTIFFENGLISH</item>
+        <item>MASTIFFTIBETAN</item>
+        <item>MEXICANHAIRLESS</item>
+        <item>MIX</item>
+        <item>MOUNTAINBERNESE</item>
+        <item>MOUNTAINSWISS</item>
+        <item>NEWFOUNDLAND</item>
+        <item>OTTERHOUND</item>
+        <item>OVCHARKACAUCASIAN</item>
+        <item>PAPILLON</item>
+        <item>PEKINESE</item>
+        <item>PEMBROKE</item>
+        <item>PINSCHERMINIATURE</item>
+        <item>  PITBULL</item>
+        <item>POINTERGERMAN</item>
+        <item>POINTERGERMANLONGHAIR</item>
+        <item>POMERANIAN</item>
+        <item>POODLEMEDIUM</item>
+        <item>POODLEMINIATURE</item>
+        <item>POODLESTANDARD</item>
+        <item>POODLETOY</item>
+        <item>PUG</item>
+        <item> PUGGLE</item>
+        <item>  PYRENEES</item>
+        <item> REDBONE</item>
+        <item> RETRIEVERCHESAPEAKE</item>
+        <item>  RETRIEVERCURLY</item>
+        <item>  RETRIEVERFLATCOATED</item>
+        <item> RETRIEVERGOLDEN</item>
+        <item>  RIDGEBACKRHODESIAN</item>
+        <item> ROTTWEILER</item>
+        <item>  SALUKI</item>
+        <item>  SAMOYED</item>
+        <item>  SCHIPPERKE</item>
+        <item>  SCHNAUZERGIANT</item>
+        <item>  SCHNAUZERMINIATURE</item>
+        <item>  SEGUGIOITALIAN</item>
+        <item>  SETTERENGLISH</item>
+        <item>  SETTERGORDON</item>
+        <item>  SETTERIRISH</item>
+        <item>  SHARPEI</item>
+        <item> SHEEPDOGENGLISH</item>
+        <item> SHEEPDOGSHETLAND</item>
+        <item>  SHIBA</item>
+        <item>   SHIHTZU</item>
+        <item>  SPANIELBLENHEIM</item>
+        <item> SPANIELBRITTANY</item>
+        <item>  SPANIELCOCKER</item>
+        <item> SPANIELIRISH</item>
+        <item>  SPANIELJAPANESE</item>
+        <item>  SPANIELSUSSEX</item>
+        <item> SPANIELWELSH</item>
+        <item>  SPITZJAPANESE</item>
+        <item>  SPRINGERENGLISH</item>
+        <item> STBERNARD</item>
+        <item>TERRIERAMERICAN</item>
+        <item>    TERRIERAUSTRALIAN</item>
+        <item>TERRIERBEDLINGTON</item>
+        <item>TERRIERBORDER</item>
+        <item>TERRIERCAIRN</item>
+        <item> TERRIERDANDIE</item>
+        <item>TERRIERFOX</item>
+        <item>TERRIERIRISH</item>
+        <item>TERRIERKERRYBLUE</item>
+        <item>TERRIERLAKELAND</item>
+        <item> TERRIERNORFOLK</item>
+        <item>TERRIERNORWICH</item>
+        <item>TERRIERPATTERDALE</item>
+        <item>TERRIERRUSSELL</item>
+        <item>TERRIERSCOTTISH</item>
+        <item>TERRIERSEALYHAM</item>
+        <item>TERRIERSILKY</item>
+        <item>TERRIERTOY</item>
+        <item>TERRIERWELSH</item>
+        <item>TERRIERWESTHIGHLAND</item>
+        <item>TERRIERWHEATEN</item>
+        <item>TERRIERYORKSHIRE</item>
+        <item>TERVUREN</item>
+        <item>VIZSLA</item>
+        <item>WATERDOGSPANISH</item>
+        <item>WEIMARANER</item>
+        <item>WHIPPET</item>
+        <item>WOLFHOUNDIRISH</item>
+    </string-array>
 </resources>

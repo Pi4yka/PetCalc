@@ -1,6 +1,10 @@
 package com.example.petcalc.data.entity
 
+import com.google.gson.annotations.SerializedName
+
 data class ImageResponse(
-  val message: String,
-  val status: String
+  @SerializedName("message")
+  val imageUrl: String?,
+
+  val status: String?
 )

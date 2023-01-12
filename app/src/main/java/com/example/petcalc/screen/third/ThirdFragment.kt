@@ -1,20 +1,18 @@
 package com.example.petcalc.screen.third
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import androidx.lifecycle.viewModelScope
 import com.bumptech.glide.Glide
 import com.example.petcalc.R
 import com.example.petcalc.databinding.FragmentThirdBinding
-import kotlinx.coroutines.cancel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ThirdFragment : Fragment(R.layout.fragment_third) {
 
     private var _binding: FragmentThirdBinding? = null
@@ -44,13 +42,13 @@ class ThirdFragment : Fragment(R.layout.fragment_third) {
         bindingThirdFragment.buttonLoad.setOnClickListener { loadImage() }
     }
 
-     fun loadImage(){
-         viewModel.getRandImage()
+     private fun loadImage(){
+         viewModel.fetchRandImage()
     }
 
     override fun onDestroyView() {
-
         super.onDestroyView()
-
+        viewModel.imageDogResult.removeObservers(this)
+        this._binding = null
     }
 }

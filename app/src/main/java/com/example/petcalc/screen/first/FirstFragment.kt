@@ -9,37 +9,41 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.*
 import com.example.petcalc.R
 import com.example.petcalc.databinding.FragmentFirstBinding
+import com.example.petcalc.databinding.FragmentThirdBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class FirstFragment : Fragment(R.layout.fragment_first) {
 
-    private lateinit var bindingFragmentFirst: FragmentFirstBinding
+    private var _binding: FragmentFirstBinding? = null
+    private val bindingFirstFragment get() = _binding!!
     private val viewModel: FirstFragmentViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d("TEST", "Fragment created")
-        bindingFragmentFirst = FragmentFirstBinding.bind(view)
+        _binding = FragmentFirstBinding.bind(view)
 
         val sizeResultObserver = Observer<String> { sizeResult ->
-            bindingFragmentFirst.sizeValueText.text = sizeResult
+            bindingFirstFragment.sizeValueText.text = sizeResult
         }
 
         viewModel.sizeResult.observe(viewLifecycleOwner, sizeResultObserver)
 
-        bindingFragmentFirst.calcuclateBtn.setOnClickListener { onCalculateClicked() }
+        bindingFirstFragment.calcuclateBtn.setOnClickListener { onCalculateClicked() }
     }
 
     private fun onCalculateClicked() {
-        val neckSize = bindingFragmentFirst.neckEditText.text.toString()
-        val bodySize = bindingFragmentFirst.bodyEditText.text.toString()
-        val height = bindingFragmentFirst.heightEditText.text.toString()
+        val neckSize = bindingFirstFragment.neckEditText.text.toString()
+        val bodySize = bindingFirstFragment.bodyEditText.text.toString()
+        val height = bindingFirstFragment.heightEditText.text.toString()
 
         if (neckSize.trim().isNotEmpty() && bodySize.trim().isNotEmpty() && height.trim()
                 .isNotEmpty()
         ) {
-            bindingFragmentFirst.sizeText.visibility = View.VISIBLE
-            bindingFragmentFirst.sizeValueText.visibility = View.VISIBLE
+            bindingFirstFragment.sizeText.visibility = View.VISIBLE
+            bindingFirstFragment.sizeValueText.visibility = View.VISIBLE
             viewModel.getSize(
                 neckSize = neckSize.toInt(),
                 bodySize = bodySize.toInt(),
@@ -48,6 +52,12 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
         } else {
             Toast.makeText(requireContext(), R.string.enter_sizes, Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        viewModel.sizeResult.removeObservers(this)
+        this._binding = null
     }
 
 

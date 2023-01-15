@@ -1,11 +1,11 @@
 package com.example.petcalc.screen.third
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.petcalc.R
 import com.example.petcalc.data.entity.Breed
+import com.example.petcalc.data.entity.getMockBreedList
 import com.example.petcalc.databinding.FragmentThirdBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -35,8 +36,9 @@ class ThirdFragment : Fragment(R.layout.fragment_third) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val breeds = emptyList<Breed>()
+        var chooseBreed : String? = null
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, Breed.values())
+
         bindingThirdFragment.dropDownBreed.setAdapter(arrayAdapter)
 
         val dogImgResultObserver = Observer<String> { imageDogResult ->
@@ -46,22 +48,28 @@ class ThirdFragment : Fragment(R.layout.fragment_third) {
                 .into(bindingThirdFragment.imageFromApi)
         }
 
+        bindingThirdFragment.dropDownBreed.setOnItemClickListener(OnItemClickListener { parent, view, position, id ->
+            val item = parent.getItemAtPosition(position).toString()
+            chooseBreed = Breed.valueOf(item).breed
+
+        })
+
         viewModel.imageDogResult.observe(viewLifecycleOwner, dogImgResultObserver)
 
-        bindingThirdFragment.buttonLoad.setOnClickListener { loadImage()
-        for (breed in Breed.values()) Log.d("TTT","[${breed.ordinal}] -> ${ breed.name }")
+        bindingThirdFragment.buttonLoad.setOnClickListener { loadImage() }
+
+        bindingThirdFragment.buttonTest.setOnClickListener {
+            when (chooseBreed) {
+                null -> loadImage()
+                else -> { loadBreedImage(chooseBreed!!)
+                }
+            }
         }
 
-        bindingThirdFragment.buttonTest.setOnClickListener { loadBreedImage("pembroke") }
-
-        bindingThirdFragment.dropDownBreed.setOnClickListener {
-            val breedDog = this.toString()
-            Log.d("TTT","$breedDog")
-        }
 
     }
 
-    private fun loadImage(){
+    private fun loadImage() {
         viewModel.fetchRandImage()
     }
 

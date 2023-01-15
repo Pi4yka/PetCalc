@@ -1,6 +1,6 @@
 package com.example.petcalc.data.entity
 
-enum class Breed(name: String) {
+enum class Breed(open val breed: String) {
     AFFENPINSCHER(
         "affenpinscher"
     ),
@@ -440,5 +440,15 @@ enum class Breed(name: String) {
     ),
     WOLFHOUNDIRISH(
         "wolfhound-irish"
+    )
+}
+
+fun getMockBreedList(): List<Breed> {
+    return listOf(
+        Breed.AFFENPINSCHER,
+        Breed.AFRICAN,
+        Breed.AIREDALE,
+        Breed.BASENJI,
+        Breed.AKITA
     )
 }

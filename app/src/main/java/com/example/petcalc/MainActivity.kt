@@ -15,6 +15,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 
+//TODO: делаем ветку draft от текущего мастера
+// Вливаем мастер в девелоп
+// В девелопе убираем все лишнее из прилы. Должен остаться только калькулятор
+// Клинап реформат рефаторинг
+// Дизайн, придумать / спиздить / дождаться пока Антон чета сделает
+// Пулл реквест из девелопа в мастер прикрепляенм Антона ревьювером пишем ему в тг+вк+почта+ватсапп чтобы он провел код ревью
+// Написать на ридми на гитхаб, 2 скриншота
+//
+
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 

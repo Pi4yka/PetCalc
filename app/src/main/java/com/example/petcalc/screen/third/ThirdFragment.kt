@@ -56,15 +56,14 @@ class ThirdFragment : Fragment(R.layout.fragment_third) {
 
         viewModel.imageDogResult.observe(viewLifecycleOwner, dogImgResultObserver)
 
-        bindingThirdFragment.buttonLoad.setOnClickListener { loadImage() }
-
-        bindingThirdFragment.buttonTest.setOnClickListener {
+        bindingThirdFragment.buttonLoad.setOnClickListener {
             when (chooseBreed) {
                 null -> loadImage()
                 else -> { loadBreedImage(chooseBreed!!)
                 }
             }
         }
+
 
 
     }

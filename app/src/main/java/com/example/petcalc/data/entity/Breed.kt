@@ -16,9 +16,9 @@ enum class Breed(open val breed: String) {
     APPENZELLER(
         "appenzeller"
     ),
-    AUSTRALIANSHEPHERD(
-        "australian-shepherd"
-    ),
+//    AUSTRALIANSHEPHERD(
+//        "australian/shepherd"
+//    ),
     BASENJI(
         "basenji"
     ),
@@ -43,24 +43,24 @@ enum class Breed(open val breed: String) {
     BRIARD(
         "briard"
     ),
-    BUHUNDNORWEGIAN(
-        "buhund-norwegian"
-    ),
-    BULLDOGBOSTON(
-        "bulldog-boston"
-    ),
-    BULLDOGENGLISH(
-        "bulldog-english"
-    ),
-    BULLDOGFRENCH(
-        "bulldog-french"
-    ),
-    BULLTERRIERSTAFFORDSHIRE(
-        "bullterrier-staffordshire"
-    ),
-    CATTLEDOGAUSTRALIAN(
-        "cattledog-australian"
-    ),
+//    BUHUNDNORWEGIAN(
+//        "buhund/norwegian"
+//    ),
+//    BULLDOGBOSTON(
+//        "bulldog/boston"
+//    ),
+//    BULLDOGENGLISH(
+//        "bulldog/english"
+//    ),
+//    BULLDOGFRENCH(
+//        "bulldog/french"
+//    ),
+//    BULLTERRIERSTAFFORDSHIRE(
+//        "bullterrier/staffordshire"
+//    ),
+//    CATTLEDOGAUSTRALIAN(
+//        "cattledog/australian"
+//    ),
     CHIHUAHUA(
         "chihuahua"
     ),
@@ -71,14 +71,14 @@ enum class Breed(open val breed: String) {
         "clumber"
     ),
     COCKAPOO("cockapoo"),
-    COLLIEBORDER(
-        "collie-border"
-    ),
+//    COLLIEBORDER(
+//        "collie/border"
+//    ),
     COONHOUND(
         "coonhound"
     ),
     CORGICARDIGAN(
-        "corgi-cardigan"
+        "corgi"
     ),
     COTONDETULEAR(
         "cotondetulear"
@@ -89,12 +89,12 @@ enum class Breed(open val breed: String) {
     DALMATIAN(
         "dalmatian"
     ),
-    DANEGREAT(
-        "dane-great"
-    ),
-    DEERHOUNDSCOTTISH(
-        "deerhound-scottish"
-    ),
+//    DANEGREAT(
+//        "dane/great"
+//    ),
+//    DEERHOUNDSCOTTISH(
+//        "deerhound/scottish"
+//    ),
     DHOLE(
         "dhole"
     ),
@@ -104,54 +104,54 @@ enum class Breed(open val breed: String) {
     DOBERMAN(
         "doberman"
     ),
-    ELKHOUNDNORWEGIAN(
-        "elkhound-norwegian"
-    ),
+//    ELKHOUNDNORWEGIAN(
+//        "elkhound/norwegian"
+//    ),
     ENTLEBUCHER(
         "entlebucher"
     ),
     ESKIMO(
         "eskimo"
     ),
-    FINNISHLAPPHUND(
-        "finnish-lapphund"
-    ),
-    FRISEBICHON(
-        "frise-bichon"
-    ),
+//    FINNISHLAPPHUND(
+//        "finnish/lapphund"
+//    ),
+//    FRISEBICHON(
+//        "frise/bichon"
+//    ),
     GERMANSHEPHERD(
         "germanshepherd"
     ),
-    GREYHOUNDITALIAN(
-        "greyhound-italian"
-    ),
+//    GREYHOUNDITALIAN(
+//        "greyhound/italian"
+//    ),
     GROENENDAEL(
         "groenendael"
     ),
     HAVANESE(
         "havanese"
     ),
-    HOUNDAFGHAN(
-        "hound-afghan"
-    ),
-    HOUNDBASSET(
-        "hound-basset"
-    ),
-    HOUNDBLOOD(
-        "hound-blood"
-    ),
-    HOUNDENGLISH(
-        "hound-english"
-    ),
-    HOUNDIBIZAN(
-        "hound-ibizan"
-    ),
-    HOUNDPLOTT(
-        "hound-plott"
-    ),
-    HOUNDWALKER(
-        "hound-walker"
-    ),
+//    HOUNDAFGHAN(
+//        "hound/afghan"
+//    ),
+//    HOUNDBASSET(
+//        "hound/basset"
+//    ),
+//    HOUNDBLOOD(
+//        "hound/blood"
+//    ),
+//    HOUNDENGLISH(
+//        "hound/english"
+//    ),
+//    HOUNDIBIZAN(
+//        "hound/ibizan"
+//    ),
+//    HOUNDPLOTT(
+//        "hound/plott"
+//    ),
+//    HOUNDWALKER(
+//        "hound/walker"
+//    ),
     HUSKY(
         "husky"
     ),
@@ -188,36 +188,36 @@ enum class Breed(open val breed: String) {
     MALTESE(
         "maltese"
     ),
-    MASTIFFBULL(
-        "mastiff-bull"
-    ),
-    MASTIFFENGLISH(
-        "mastiff-english"
-    ),
-    MASTIFFTIBETAN(
-        "mastiff-tibetan"
-    ),
+//    MASTIFFBULL(
+//        "mastiff/bull"
+//    ),
+//    MASTIFFENGLISH(
+//        "mastiff/english"
+//    ),
+//    MASTIFFTIBETAN(
+//        "mastiff/tibetan"
+//    ),
     MEXICANHAIRLESS(
         "mexicanhairless"
     ),
     MIX(
         "mix"
     ),
-    MOUNTAINBERNESE(
-        "mountain-bernese"
-    ),
-    MOUNTAINSWISS(
-        "mountain-swiss"
-    ),
+//    MOUNTAINBERNESE(
+//        "mountain/bernese"
+//    ),
+//    MOUNTAINSWISS(
+//        "mountain/swiss"
+//    ),
     NEWFOUNDLAND(
         "newfoundland"
     ),
     OTTERHOUND(
         "otterhound"
     ),
-    OVCHARKACAUCASIAN(
-        "ovcharka-caucasian"
-    ),
+//    OVCHARKACAUCASIAN(
+//        "ovcharka/caucasian"
+//    ),
     PAPILLON(
         "papillon"
     ),
@@ -227,33 +227,33 @@ enum class Breed(open val breed: String) {
     PEMBROKE(
         "pembroke"
     ),
-    PINSCHERMINIATURE(
-        "pinscher-miniature"
-    ),
+//    PINSCHERMINIATURE(
+//        "pinscher/miniature"
+//    ),
     PITBULL(
         "pitbull"
     ),
     POINTERGERMAN(
-        "pointer-german"
+        "pointer/german"
     ),
-    POINTERGERMANLONGHAIR(
-        "pointer-germanlonghair"
-    ),
+//    POINTERGERMANLONGHAIR(
+//        "pointer/germanlonghair"
+//    ),
     POMERANIAN(
         "pomeranian"
     ),
-    POODLEMEDIUM(
-        "poodle-medium"
-    ),
-    POODLEMINIATURE(
-        "poodle-miniature"
-    ),
-    POODLESTANDARD(
-        "poodle-standard"
-    ),
-    POODLETOY(
-        "poodle-toy"
-    ),
+//    POODLEMEDIUM(
+//        "poodle/medium"
+//    ),
+//    POODLEMINIATURE(
+//        "poodle/miniature"
+//    ),
+//    POODLESTANDARD(
+//        "poodle/standard"
+//    ),
+//    POODLETOY(
+//        "poodle/toy"
+//    ),
     PUG(
         "pug"
     ),
@@ -267,21 +267,21 @@ enum class Breed(open val breed: String) {
     REDBONE(
         "redbone"
     ),
-    RETRIEVERCHESAPEAKE(
-        "retriever-chesapeake"
-    ),
-    RETRIEVERCURLY(
-        "retriever-curly"
-    ),
-    RETRIEVERFLATCOATED(
-        "retriever-flatcoated"
-    ),
-    RETRIEVERGOLDEN(
-        "retriever-golden"
-    ),
-    RIDGEBACKRHODESIAN(
-        "ridgeback-rhodesian"
-    ),
+//    RETRIEVERCHESAPEAKE(
+//        "retriever/chesapeake"
+//    ),
+//    RETRIEVERCURLY(
+//        "retriever/curly"
+//    ),
+//    RETRIEVERFLATCOATED(
+//        "retriever/flatcoated"
+//    ),
+//    RETRIEVERGOLDEN(
+//        "retriever/golden"
+//    ),
+//    RIDGEBACKRHODESIAN(
+//        "ridgeback/rhodesian"
+//    ),
     ROTTWEILER(
         "rottweiler"
     ),
@@ -294,153 +294,153 @@ enum class Breed(open val breed: String) {
     SCHIPPERKE(
         "schipperke"
     ),
-    SCHNAUZERGIANT(
-        "schnauzer-giant"
-    ),
-    SCHNAUZERMINIATURE(
-        "schnauzer-miniature"
-    ),
-    SEGUGIOITALIAN(
-        "segugio-italian"
-    ),
-    SETTERENGLISH(
-        "setter-english"
-    ),
-    SETTERGORDON(
-        "setter-gordon"
-    ),
-    SETTERIRISH(
-        "setter-irish"
-    ),
+//    SCHNAUZERGIANT(
+//        "schnauzer/giant"
+//    ),
+//    SCHNAUZERMINIATURE(
+//        "schnauzer/miniature"
+//    ),
+//    SEGUGIOITALIAN(
+//        "segugio/italian"
+//    ),
+//    SETTERENGLISH(
+//        "setter/english"
+//    ),
+//    SETTERGORDON(
+//        "setter/gordon"
+//    ),
+//    SETTERIRISH(
+//        "setter/irish"
+//    ),
     SHARPEI(
         "sharpei"
     ),
-    SHEEPDOGENGLISH(
-        "sheepdog-english"
-    ),
-    SHEEPDOGSHETLAND(
-        "sheepdog-shetland"
-    ),
+//    SHEEPDOGENGLISH(
+//        "sheepdog/english"
+//    ),
+//    SHEEPDOGSHETLAND(
+//        "sheepdog/shetland"
+//    ),
     SHIBA(
         "shiba"
     ),
     SHIHTZU(
         "shihtzu"
     ),
-    SPANIELBLENHEIM(
-        "spaniel-blenheim"
-    ),
-    SPANIELBRITTANY(
-        "spaniel-brittany"
-    ),
-    SPANIELCOCKER(
-        "spaniel-cocker"
-    ),
-    SPANIELIRISH(
-        "spaniel-irish"
-    ),
-    SPANIELJAPANESE(
-        "spaniel-japanese"
-    ),
-    SPANIELSUSSEX(
-        "spaniel-sussex"
-    ),
-    SPANIELWELSH(
-        "spaniel-welsh"
-    ),
-    SPITZJAPANESE(
-        "spitz-japanese"
-    ),
-    SPRINGERENGLISH(
-        "springer-english"
-    ),
+//    SPANIELBLENHEIM(
+//        "spaniel/blenheim"
+//    ),
+//    SPANIELBRITTANY(
+//        "spaniel/brittany"
+//    ),
+//    SPANIELCOCKER(
+//        "spaniel/cocker"
+//    ),
+//    SPANIELIRISH(
+//        "spaniel/irish"
+//    ),
+//    SPANIELJAPANESE(
+//        "spaniel/japanese"
+//    ),
+//    SPANIELSUSSEX(
+//        "spaniel/sussex"
+//    ),
+//    SPANIELWELSH(
+//        "spaniel/welsh"
+//    ),
+//    SPITZJAPANESE(
+//        "spitz/japanese"
+//    ),
+//    SPRINGERENGLISH(
+//        "springer/english"
+//    ),
     STBERNARD(
         "stbernard"
     ),
-    TERRIERAMERICAN(
-        "terrier-american"
-    ),
-    TERRIERAUSTRALIAN(
-        "terrier-australian"
-    ),
-    TERRIERBEDLINGTON(
-        "terrier-bedlington"
-    ),
-    TERRIERBORDER(
-        "terrier-border"
-    ),
-    TERRIERCAIRN(
-        "terrier-cairn"
-    ),
-    TERRIERDANDIE(
-        "terrier-dandie"
-    ),
-    TERRIERFOX(
-        "terrier-fox"
-    ),
-    TERRIERIRISH(
-        "terrier-irish"
-    ),
-    TERRIERKERRYBLUE(
-        "terrier-kerryblue"
-    ),
-    TERRIERLAKELAND(
-        "terrier-lakeland"
-    ),
-    TERRIERNORFOLK(
-        "terrier-norfolk"
-    ),
-    TERRIERNORWICH(
-        "terrier-norwich"
-    ),
-    TERRIERPATTERDALE(
-        "terrier-patterdale"
-    ),
-    TERRIERRUSSELL(
-        "terrier-russell"
-    ),
-    TERRIERSCOTTISH(
-        "terrier-scottish"
-    ),
-    TERRIERSEALYHAM(
-        "terrier-sealyham"
-    ),
-    TERRIERSILKY(
-        "terrier-silky"
-    ),
-    TERRIERTOY(
-        "terrier-toy"
-    ),
-    TERRIERWELSH(
-        "terrier-welsh"
-    ),
-    TERRIERWESTHIGHLAND(
-        "terrier-westhighland"
-    ),
-    TERRIERWHEATEN(
-        "terrier-wheaten"
-    ),
-    TERRIERYORKSHIRE(
-        "terrier-yorkshire"
-    ),
+//    TERRIERAMERICAN(
+//        "terrier/american"
+//    ),
+//    TERRIERAUSTRALIAN(
+//        "terrier/australian"
+//    ),
+//    TERRIERBEDLINGTON(
+//        "terrier/bedlington"
+//    ),
+//    TERRIERBORDER(
+//        "terrier/border"
+//    ),
+//    TERRIERCAIRN(
+//        "terrier/cairn"
+//    ),
+//    TERRIERDANDIE(
+//        "terrier/dandie"
+//    ),
+//    TERRIERFOX(
+//        "terrier/fox"
+//    ),
+//    TERRIERIRISH(
+//        "terrier/irish"
+//    ),
+//    TERRIERKERRYBLUE(
+//        "terrier/kerryblue"
+//    ),
+//    TERRIERLAKELAND(
+//        "terrier/lakeland"
+//    ),
+//    TERRIERNORFOLK(
+//        "terrier/norfolk"
+//    ),
+//    TERRIERNORWICH(
+//        "terrier/norwich"
+//    ),
+//    TERRIERPATTERDALE(
+//        "terrier/patterdale"
+//    ),
+//    TERRIERRUSSELL(
+//        "terrier/russell"
+//    ),
+//    TERRIERSCOTTISH(
+//        "terrier/scottish"
+//    ),
+//    TERRIERSEALYHAM(
+//        "terrier/sealyham"
+//    ),
+//    TERRIERSILKY(
+//        "terrier/silky"
+//    ),
+//    TERRIERTOY(
+//        "terrier/toy"
+//    ),
+//    TERRIERWELSH(
+//        "terrier/welsh"
+//    ),
+//    TERRIERWESTHIGHLAND(
+//        "terrier/westhighland"
+//    ),
+//    TERRIERWHEATEN(
+//        "terrier/wheaten"
+//    ),
+//    TERRIERYORKSHIRE(
+//        "terrier/yorkshire"
+//    ),
     TERVUREN(
         "tervuren"
     ),
     VIZSLA(
         "vizsla"
     ),
-    WATERDOGSPANISH(
-        "waterdog-spanish"
-    ),
+//    WATERDOGSPANISH(
+//        "waterdog/spanish"
+//    ),
     WEIMARANER(
         "weimaraner"
     ),
     WHIPPET(
         "whippet"
     ),
-    WOLFHOUNDIRISH(
-        "wolfhound-irish"
-    )
+//    WOLFHOUNDIRISH(
+//        "wolfhound/irish"
+//    )
 }
 
 fun getMockBreedList(): List<Breed> {

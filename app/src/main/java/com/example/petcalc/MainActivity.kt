@@ -9,19 +9,18 @@ import androidx.lifecycle.viewModelScope
 import com.example.petcalc.databinding.ActivityMainBinding
 import com.example.petcalc.screen.first.FirstFragment
 import com.example.petcalc.screen.first.FirstFragmentViewModel
-import com.example.petcalc.screen.second.SecondFragment
-import com.example.petcalc.screen.third.ThirdFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 
 //TODO: делаем ветку draft от текущего мастера
 // Вливаем мастер в девелоп
-// В девелопн остаться только калькулятор
-// Клинап реформат рефаторинге убираем все лишнее из прилы. Долже
+// В девелопе убираем все лишнее из прилы. Должен остаться только калькулятор
+// Клинап реформат рефаторинг
 // Дизайн, придумать / спиздить / дождаться пока Антон чета сделает
 // Пулл реквест из девелопа в мастер прикрепляенм Антона ревьювером пишем ему в тг+вк+почта+ватсапп чтобы он провел код ревью
 // Написать на ридми на гитхаб, 2 скриншота
+//
 
 
 @AndroidEntryPoint
@@ -37,13 +36,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
         val firstFragment = FirstFragment()
-        val thirdFragment = ThirdFragment()
 
         setCurrentFragment(firstFragment)
         bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.calculateIc -> setCurrentFragment(firstFragment)
-                R.id.diabloIc -> setCurrentFragment(thirdFragment)
             }
             true
         }

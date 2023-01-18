@@ -27,23 +27,15 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var bindingMainBinding: ActivityMainBinding
-    private lateinit var bottomNavigationView: BottomNavigationView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingMainBinding = ActivityMainBinding.inflate(layoutInflater)
         val view = bindingMainBinding.root
         setContentView(view)
-        bottomNavigationView = findViewById(R.id.bottomNavigationView)
         val firstFragment = FirstFragment()
-
         setCurrentFragment(firstFragment)
-        bottomNavigationView.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.calculateIc -> setCurrentFragment(firstFragment)
-            }
-            true
-        }
     }
 
     private fun setCurrentFragment(

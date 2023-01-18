@@ -9,7 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.*
 import com.example.petcalc.R
 import com.example.petcalc.databinding.FragmentFirstBinding
-import com.example.petcalc.databinding.FragmentThirdBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 

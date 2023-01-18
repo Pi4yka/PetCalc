@@ -8,41 +8,41 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.*
 import com.example.petcalc.R
-import com.example.petcalc.databinding.FragmentFirstBinding
+import com.example.petcalc.databinding.FragmentCalculatorBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class FirstFragment : Fragment(R.layout.fragment_first) {
+class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
 
-    private var _binding: FragmentFirstBinding? = null
-    private val bindingFirstFragment get() = _binding!!
-    private val viewModel: FirstFragmentViewModel by viewModels()
+    private var _binding: FragmentCalculatorBinding? = null
+    private val bindingCalculatorFragment get() = _binding!!
+    private val viewModel: CalculatorFragmentViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d("TEST", "Fragment created")
-        _binding = FragmentFirstBinding.bind(view)
+        _binding = FragmentCalculatorBinding.bind(view)
 
         val sizeResultObserver = Observer<String> { sizeResult ->
-            bindingFirstFragment.sizeValueText.text = sizeResult
+            bindingCalculatorFragment.sizeValueText.text = sizeResult
         }
 
         viewModel.sizeResult.observe(viewLifecycleOwner, sizeResultObserver)
 
-        bindingFirstFragment.calcuclateBtn.setOnClickListener { onCalculateClicked() }
+        bindingCalculatorFragment.calculateBtn.setOnClickListener { onCalculateClicked() }
     }
 
     private fun onCalculateClicked() {
-        val neckSize = bindingFirstFragment.neckEditText.text.toString()
-        val bodySize = bindingFirstFragment.bodyEditText.text.toString()
-        val height = bindingFirstFragment.heightEditText.text.toString()
+        val neckSize = bindingCalculatorFragment.neckEditText.text.toString()
+        val bodySize = bindingCalculatorFragment.bodyEditText.text.toString()
+        val height = bindingCalculatorFragment.heightEditText.text.toString()
 
         if (neckSize.trim().isNotEmpty() && bodySize.trim().isNotEmpty() && height.trim()
                 .isNotEmpty()
         ) {
-            bindingFirstFragment.sizeText.visibility = View.VISIBLE
-            bindingFirstFragment.sizeValueText.visibility = View.VISIBLE
+            bindingCalculatorFragment.sizeText.visibility = View.VISIBLE
+            bindingCalculatorFragment.sizeValueText.visibility = View.VISIBLE
             viewModel.getSize(
                 neckSize = neckSize.toInt(),
                 bodySize = bodySize.toInt(),

@@ -6,22 +6,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.cancel
-import kotlinx.coroutines.cancelChildren
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class FirstFragmentViewModel @Inject constructor() : ViewModel() {
+class CalculatorFragmentViewModel @Inject constructor() : ViewModel() {
 
     val sizeResult: MutableLiveData<String> by lazy {
         MutableLiveData<String>()
     }
-
-    init {
-        Log.d("TTT", "FirstFragment ViewModel is init")
-    }
-
 
     fun getSize(
         neckSize: Int,
@@ -41,9 +34,7 @@ class FirstFragmentViewModel @Inject constructor() : ViewModel() {
         }
     }
 
-
     override fun onCleared() {
-        Log.d("TTT", "FirstFragment ViewModel is cleared")
         super.onCleared()
     }
 }

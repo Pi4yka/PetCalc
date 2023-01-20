@@ -34,9 +34,9 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
     }
 
     private fun onCalculateClicked() {
-        val neckSize = bindingCalculatorFragment.neckEditText.text.toString()
-        val bodySize = bindingCalculatorFragment.bodyEditText.text.toString()
-        val height = bindingCalculatorFragment.heightEditText.text.toString()
+        val neckSize = bindingCalculatorFragment.neckTextInput.editText?.text.toString()
+        val bodySize = bindingCalculatorFragment.bodyTextInput.editText?.text.toString()
+        val height = bindingCalculatorFragment.heightTextInput.editText?.text.toString()
 
         if (neckSize.trim().isNotEmpty() && bodySize.trim().isNotEmpty() && height.trim()
                 .isNotEmpty()

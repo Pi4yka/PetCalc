@@ -18,12 +18,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var bindingMainActivityBinding: ActivityMainBinding
+    private lateinit var MainActivityBinding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingMainActivityBinding = ActivityMainBinding.inflate(layoutInflater)
-        val view = bindingMainActivityBinding.root
+        MainActivityBinding = ActivityMainBinding.inflate(layoutInflater)
+        val view = MainActivityBinding.root
         setContentView(view)
         val calculatorFragment = CalculatorFragment()
         setCurrentFragment(calculatorFragment)

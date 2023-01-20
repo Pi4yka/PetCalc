@@ -6,140 +6,172 @@
     android:layout_height="match_parent"
     tools:context=".screen.first.CalculatorFragment">
 
-    <ImageView
-        android:id="@+id/dogeImageView"
-        android:layout_width="120dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/dog"
+
+    <RelativeLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/dogeImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/dog"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/dogeImageView"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/app_name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/dogeImageView" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/mainText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_medium"
         android:text="@string/Main_text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dogeImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <TextView
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nameText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/name"
-        android:textSize="20sp"
+        android:hint="@string/name"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainText" />
+        app:layout_constraintTop_toBottomOf="@+id/mainText">
 
-    <EditText
-        android:id="@+id/nameEditText"
-        android:layout_width="64dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_et_margin"
-        app:layout_constraintBottom_toBottomOf="@+id/nameText"
-        app:layout_constraintStart_toEndOf="@+id/nameText"
-        app:layout_constraintTop_toTopOf="@+id/nameText" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/roboto_medium"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="190dp" />
 
-    <TextView
-        android:id="@+id/neckText"
-        android:layout_width="wrap_content"
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/neckTextInput"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/coverage_neck"
-        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/coverage_neck"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameText" />
+        app:layout_constraintTop_toBottomOf="@+id/nameText">
 
-    <EditText
-        android:id="@+id/neckEditText"
-        android:layout_width="64dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="numberSigned"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="190dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/bodyTextInput"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_et_margin"
-        android:inputType="numberSigned"
-        app:layout_constraintBottom_toBottomOf="@+id/neckText"
-        app:layout_constraintStart_toEndOf="@+id/neckText"
-        app:layout_constraintTop_toTopOf="@+id/neckText"
-        app:layout_constraintVertical_bias="0.888" />
-
-
-    <TextView
-        android:id="@+id/bodyText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/coverage_body"
-        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/coverage_body"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/neckText" />
+        app:layout_constraintTop_toBottomOf="@+id/neckTextInput">
 
-    <TextView
-        android:id="@+id/heightText"
-        android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="numberSigned"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="190dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/heightTextInput"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/pet_height"
-        android:textSize="@dimen/default_text_size"
+        android:layout_marginTop="16dp"
+        android:hint="@string/pet_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bodyText" />
+        app:layout_constraintTop_toBottomOf="@+id/bodyTextInput">
 
-    <EditText
-        android:id="@+id/heightEditText"
-        android:layout_width="64dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_et_margin"
-        android:inputType="numberSigned"
-        app:layout_constraintBottom_toBottomOf="@+id/heightText"
-        app:layout_constraintStart_toEndOf="@+id/heightText"
-        app:layout_constraintTop_toTopOf="@+id/heightText" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="numberSigned"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="190dp" />
 
-
-    <EditText
-        android:id="@+id/bodyEditText"
-        android:layout_width="64dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_et_margin"
-        android:inputType="numberSigned"
-        app:layout_constraintBottom_toBottomOf="@+id/bodyText"
-        app:layout_constraintStart_toEndOf="@+id/bodyText"
-        app:layout_constraintTop_toTopOf="@+id/bodyText" />
-
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/calculateBtn"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:fontFamily="@font/roboto_medium"
         android:text="@string/calculate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
     <TextView
         android:id="@+id/sizeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_medium"
         android:text="@string/size_title"
         android:textSize="@dimen/default_text_size"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightEditText"
+        app:layout_constraintTop_toBottomOf="@+id/heightTextInput"
         tools:visibility="visible" />
 
     <TextView
         android:id="@+id/sizeValueText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto_medium"
         android:textSize="48sp"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/calculateBtn"
@@ -148,7 +180,6 @@
         app:layout_constraintTop_toBottomOf="@+id/sizeText"
         tools:text="M"
         tools:visibility="visible" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

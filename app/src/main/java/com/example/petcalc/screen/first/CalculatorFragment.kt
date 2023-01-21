@@ -43,6 +43,7 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
         ) {
             bindingCalculatorFragment.sizeText.visibility = View.VISIBLE
             bindingCalculatorFragment.sizeValueText.visibility = View.VISIBLE
+            bindingCalculatorFragment.relativeResultBlock.visibility = View.VISIBLE
             viewModel.getSize(
                 neckSize = neckSize.toInt(),
                 bodySize = bodySize.toInt(),

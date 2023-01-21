@@ -28,7 +28,7 @@ class CalculatorFragmentViewModel @Inject constructor() : ViewModel() {
                 bodySize in 40..46 || neckSize in 26..30 && height >= 30 -> "M"
                 bodySize in 46..50 || neckSize in 30..34 && height >= 36 -> "L"
                 bodySize >= 50 || neckSize >= 34 && height >= 40 -> "XL"
-                else -> "Не могу вычислить"
+                else -> "Error"
             }
             sizeResult.postValue(size)
         }

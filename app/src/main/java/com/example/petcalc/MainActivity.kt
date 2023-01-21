@@ -2,6 +2,7 @@ package com.example.petcalc
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.petcalc.databinding.ActivityMainBinding
 import com.example.petcalc.screen.first.CalculatorFragment
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         val calculatorFragment = CalculatorFragment()
         setCurrentFragment(calculatorFragment)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 
     private fun setCurrentFragment(

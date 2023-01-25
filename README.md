@@ -13,9 +13,9 @@ PetCalc - приложение для рассчета размеров одеж
 
 ## Скриншоты
 
-[<img src="/readme/screen_1.png" align="left"
+[<img src="/readme/screen_1.jpg" align="left"
 width="200"
     hspace="10" vspace="10">](/readme/screen_1.png)
-[<img src="/readme/screen_2.png" align="center"
+[<img src="/readme/screen_2.jpg" align="center"
 width="200"
     hspace="10" vspace="10">](/readme/screen_2.png)

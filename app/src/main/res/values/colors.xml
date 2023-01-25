@@ -7,12 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="brown">#D2691E</color>
+    <color name="brown">#B56F40</color>
     <color name="green">#0FAF51</color>
     <color name="blue">#475BD8</color>
     <color name="grey">#F3F4F6</color>
     <color name="greyFont">#999999</color>
     <color name="whiteBackground"> #FFFFFFFF </color>
-    <color name="sizeResult"> #0FAF51 </color>
     <color name="buttonCalc"> #475BD8 </color>
+    <color name="pink">#EDA9A2</color>
 </resources>

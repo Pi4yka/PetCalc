@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PetCalc</string>
     <string name="pet_height">Pet Height</string>
@@ -6,7 +7,12 @@
     <string name="coverage_neck">Coverage Neck</string>
     <string name="coverage_body">Coverage Body</string>
     <string name="calculate">Calculate</string>
-    <string name="size_title">Size your pet</string>
+    <string name="size_title">"Your pet's size"</string>
     <string name="enter_sizes">Enter Sizes!</string>
-    <string name="first_fragment_title">First Fragment</string>
+    <string name="size_XL">XL</string>
+    <string name="size_L">L</string>
+    <string name="size_M">M</string>
+    <string name="size_S">S</string>
+    <string name="size_XS">XS</string>
+    <string name="error">Error</string>
 </resources>

@@ -6,9 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".screen.first.CalculatorFragment">
 
-
-    <RelativeLayout
-        android:id="@+id/linearLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -20,215 +19,184 @@
             android:id="@+id/dogeImageView"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:gravity="center"
             android:src="@drawable/dog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/headerTextView"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/headerTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_toEndOf="@+id/dogeImageView"
             android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
             android:text="@string/app_name"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/dogeImageView" />
+            app:layout_constraintStart_toEndOf="@+id/dogeImageView"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/mainText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/default_margin"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/Main_text"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/headerContainer" />
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nameText"
+    <EditText
+        android:id="@+id/nameTextInput"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_height="@dimen/default_height_input"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:background="@drawable/textinput_background"
+        android:drawableStart="@drawable/drawable_ic_tag"
+        android:drawablePadding="@dimen/default_padding"
+        android:fontFamily="@font/roboto_medium"
         android:hint="@string/name"
-        android:textColor="@color/greyFont"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingEnd="@dimen/default_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainText">
+        app:layout_constraintTop_toBottomOf="@+id/mainText" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/custom_input"
-            android:drawableStart="@drawable/ic_tag"
-            android:fontFamily="@font/roboto_medium"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="190dp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/neckTextInput"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="@dimen/default_height_input"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:background="@drawable/textinput_background"
+        android:drawableStart="@drawable/drawable_ic_ruler"
+        android:drawablePadding="@dimen/default_padding"
+        android:fontFamily="@font/roboto_medium"
         android:hint="@string/coverage_neck"
-        android:textColor="@color/greyFont"
+        android:inputType="numberSigned"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingEnd="@dimen/default_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameText">
+        app:layout_constraintTop_toBottomOf="@+id/nameTextInput" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/custom_input"
-            android:drawableStart="@drawable/ic_ruler"
-            android:fontFamily="@font/roboto_medium"
-            android:inputType="numberSigned"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="190dp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/bodyTextInput"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="@dimen/default_height_input"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:background="@drawable/textinput_background"
+        android:drawableStart="@drawable/drawable_ic_ruler"
+        android:drawablePadding="@dimen/default_padding"
+        android:fontFamily="@font/roboto_medium"
         android:hint="@string/coverage_body"
-        android:textColor="@color/greyFont"
+        android:inputType="numberSigned"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingEnd="@dimen/default_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/neckTextInput">
+        app:layout_constraintTop_toBottomOf="@+id/neckTextInput" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/custom_input"
-            android:drawableStart="@drawable/ic_ruler"
-            android:fontFamily="@font/roboto_medium"
-            android:inputType="numberSigned"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="190dp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/heightTextInput"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="@dimen/default_height_input"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:background="@drawable/textinput_background"
+        android:drawableStart="@drawable/drawable_ic_ruler"
+        android:drawablePadding="@dimen/default_padding"
+        android:fontFamily="@font/roboto_medium"
         android:hint="@string/pet_height"
-        android:textColor="@color/greyFont"
+        android:inputType="numberSigned"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingEnd="@dimen/default_padding"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bodyTextInput">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/custom_input"
-            android:drawableStart="@drawable/ic_ruler"
-            android:fontFamily="@font/roboto_medium"
-            android:inputType="numberSigned"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="190dp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/bodyTextInput" />
 
     <Button
         android:id="@+id/calculateBtn"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/custom_button"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@drawable/calculate_button_background"
+        android:elevation="10dp"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/calculate"
         android:textColor="@color/white"
-        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-    <RelativeLayout
-        android:id="@+id/relativeResultBlock"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/resultContainer"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:background="@drawable/result_container_background"
+        android:elevation="10dp"
         android:gravity="center"
         android:visibility="gone"
-        android:background="@drawable/custom_result"
-        android:elevation="10dp"
         app:layout_constraintBottom_toTopOf="@+id/calculateBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/heightTextInput"
+        app:layout_constraintTop_toBottomOf="@+id/heightTextInput"
         tools:visibility="visible">
 
         <TextView
-            android:id="@+id/sizeText"
+            android:id="@+id/sizeMainText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/size_title"
+            android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:visibility="gone"
-            android:textColor="@color/white"
-            android:textAlignment="center"
-            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:visibility="visible" />
 
         <TextView
             android:id="@+id/sizeValueText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sizeText"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_medium"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:fontFamily="@font/roboto_medium"
             android:textSize="70sp"
             android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sizeText"
-            tools:text="Error"
+            app:layout_constraintTop_toBottomOf="@+id/sizeMainText"
+            tools:text="@string/size_M"
             tools:visibility="visible" />
 
-    </RelativeLayout>
-
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,7 +1,6 @@
 package com.example.petcalc.screen.first
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -21,33 +20,34 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("TEST", "Fragment created")
         _binding = FragmentCalculatorBinding.bind(view)
 
-        val sizeResultObserver = Observer<String> { sizeResult ->
-            bindingCalculatorFragment.sizeValueText.text = sizeResult
+        val sizeResultObserver = Observer<Int> { sizeResult ->
+            bindingCalculatorFragment.sizeValueText.text = getString(sizeResult)
         }
 
         viewModel.sizeResult.observe(viewLifecycleOwner, sizeResultObserver)
-
         bindingCalculatorFragment.calculateBtn.setOnClickListener { onCalculateClicked() }
     }
 
-    private fun onCalculateClicked() {
-        val neckSize = bindingCalculatorFragment.neckTextInput.editText?.text.toString()
-        val bodySize = bindingCalculatorFragment.bodyTextInput.editText?.text.toString()
-        val height = bindingCalculatorFragment.heightTextInput.editText?.text.toString()
+    private fun isInputsEmpty(): Boolean {
+        val checkInputs: Boolean =
+            bindingCalculatorFragment.neckTextInput.text.toString().isNotEmpty()
+                    && bindingCalculatorFragment.bodyTextInput.text.toString().trim().isNotEmpty()
+                    && bindingCalculatorFragment.heightTextInput.text.toString().trim().isNotEmpty()
+        return checkInputs
+    }
 
-        if (neckSize.trim().isNotEmpty() && bodySize.trim().isNotEmpty() && height.trim()
-                .isNotEmpty()
+    private fun onCalculateClicked() {
+        if (isInputsEmpty()
         ) {
-            bindingCalculatorFragment.sizeText.visibility = View.VISIBLE
+            bindingCalculatorFragment.sizeMainText.visibility = View.VISIBLE
             bindingCalculatorFragment.sizeValueText.visibility = View.VISIBLE
-            bindingCalculatorFragment.relativeResultBlock.visibility = View.VISIBLE
-            viewModel.getSize(
-                neckSize = neckSize.toInt(),
-                bodySize = bodySize.toInt(),
-                height = height.toInt()
+            bindingCalculatorFragment.resultContainer.visibility = View.VISIBLE
+            viewModel.calculateSize(
+                neckSize = bindingCalculatorFragment.neckTextInput.text.toString().toInt(),
+                bodySize = bindingCalculatorFragment.bodyTextInput.text.toString().toInt(),
+                heightBody = bindingCalculatorFragment.heightTextInput.text.toString().toInt()
             )
         } else {
             Toast.makeText(requireContext(), R.string.enter_sizes, Toast.LENGTH_SHORT).show()

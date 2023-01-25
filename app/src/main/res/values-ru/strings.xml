@@ -9,5 +9,10 @@
     <string name="calculate">Рассчитать</string>
     <string name="size_title">Размер вашего питомца</string>
     <string name="enter_sizes">Введите размеры!</string>
-    <string name="first_fragment_title">Первый фрагмент</string>
+    <string name="size_XL">XL</string>
+    <string name="size_L">L</string>
+    <string name="size_M">M</string>
+    <string name="size_S">S</string>
+    <string name="size_XS">XS</string>
+    <string name="error">Error</string>
 </resources>

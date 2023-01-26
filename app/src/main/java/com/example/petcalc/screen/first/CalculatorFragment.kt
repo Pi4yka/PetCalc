@@ -30,24 +30,20 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
         bindingCalculatorFragment.calculateBtn.setOnClickListener { onCalculateClicked() }
     }
 
-    private fun isInputsEmpty(): Boolean {
-        val checkInputs: Boolean =
-            bindingCalculatorFragment.neckTextInput.text.toString().isNotEmpty()
-                    && bindingCalculatorFragment.bodyTextInput.text.toString().trim().isNotEmpty()
-                    && bindingCalculatorFragment.heightTextInput.text.toString().trim().isNotEmpty()
-        return checkInputs
-    }
+    private fun isInputsEmpty(): Boolean =
+        bindingCalculatorFragment.neckTextInput.text.toString().isNotEmpty() &&
+                bindingCalculatorFragment.bodyTextInput.text.toString().trim().isNotEmpty() &&
+                bindingCalculatorFragment.heightTextInput.text.toString().trim().isNotEmpty()
 
     private fun onCalculateClicked() {
-        if (isInputsEmpty()
-        ) {
+        if (isInputsEmpty()) {
             bindingCalculatorFragment.sizeMainText.visibility = View.VISIBLE
             bindingCalculatorFragment.sizeValueText.visibility = View.VISIBLE
             bindingCalculatorFragment.resultContainer.visibility = View.VISIBLE
             viewModel.calculateSize(
                 neckSize = bindingCalculatorFragment.neckTextInput.text.toString().toInt(),
                 bodySize = bindingCalculatorFragment.bodyTextInput.text.toString().toInt(),
-                heightBody = bindingCalculatorFragment.heightTextInput.text.toString().toInt()
+                bodyHeight = bindingCalculatorFragment.heightTextInput.text.toString().toInt()
             )
         } else {
             Toast.makeText(requireContext(), R.string.enter_sizes, Toast.LENGTH_SHORT).show()
@@ -59,6 +55,5 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
         viewModel.sizeResult.removeObservers(this)
         this._binding = null
     }
-
 
 }

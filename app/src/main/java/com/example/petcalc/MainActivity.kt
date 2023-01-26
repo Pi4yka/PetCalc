@@ -1,54 +1,25 @@
 package com.example.petcalc
 
-import android.app.Application
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.petcalc.databinding.ActivityMainBinding
-import com.example.petcalc.screen.first.FirstFragment
-import com.example.petcalc.screen.first.FirstFragmentViewModel
-import com.example.petcalc.screen.second.SecondFragment
-import com.example.petcalc.screen.third.ThirdFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.petcalc.screen.first.CalculatorFragment
 import dagger.hilt.android.AndroidEntryPoint
-
-
-//TODO: делаем ветку draft от текущего мастера
-// Вливаем мастер в девелоп
-// В девелопе убираем все лишнее из прилы. Должен остаться только калькулятор
-// Клинап реформат рефаторинг
-// Дизайн, придумать / спиздить / дождаться пока Антон чета сделает
-// Пулл реквест из девелопа в мастер прикрепляенм Антона ревьювером пишем ему в тг+вк+почта+ватсапп чтобы он провел код ревью
-// Написать на ридми на гитхаб, 2 скриншота
-//
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var bindingMainBinding: ActivityMainBinding
-    private lateinit var bottomNavigationView: BottomNavigationView
+    private lateinit var mainActivityBinding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingMainBinding = ActivityMainBinding.inflate(layoutInflater)
-        val view = bindingMainBinding.root
+        mainActivityBinding = ActivityMainBinding.inflate(layoutInflater)
+        val view = mainActivityBinding.root
         setContentView(view)
-        bottomNavigationView = findViewById(R.id.bottomNavigationView)
-        val firstFragment = FirstFragment()
-        val secondFragment = SecondFragment()
-        val thirdFragment = ThirdFragment()
-
-        setCurrentFragment(firstFragment)
-        bottomNavigationView.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.calculateIc -> setCurrentFragment(firstFragment)
-                R.id.listIc -> setCurrentFragment(secondFragment)
-                R.id.diabloIc -> setCurrentFragment(thirdFragment)
-            }
-            true
-        }
+        val calculatorFragment = CalculatorFragment()
+        setCurrentFragment(calculatorFragment)
     }
 
     private fun setCurrentFragment(

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screen.first.CalculatorFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/dogeImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:gravity="center"
+            android:src="@drawable/dog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/headerTextView"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/headerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/dogeImageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/mainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/Main_text"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerContainer" />
+
+    <EditText
+        android:id="@+id/nameTextInput"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_height_input"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:background="@drawable/textinput_background"
+        android:drawableStart="@drawable/drawable_ic_tag"
+        android:drawablePadding="@dimen/default_padding"
+        android:fontFamily="@font/roboto_medium"
+        android:hint="@string/name"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingEnd="@dimen/default_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainText" />
+
+    <EditText
+        android:id="@+id/neckTextInput"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_height_input"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:background="@drawable/textinput_background"
+        android:drawableStart="@drawable/drawable_ic_ruler"
+        android:drawablePadding="@dimen/default_padding"
+        android:fontFamily="@font/roboto_medium"
+        android:hint="@string/coverage_neck"
+        android:inputType="numberSigned"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingEnd="@dimen/default_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextInput" />
+
+    <EditText
+        android:id="@+id/bodyTextInput"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_height_input"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:background="@drawable/textinput_background"
+        android:drawableStart="@drawable/drawable_ic_ruler"
+        android:drawablePadding="@dimen/default_padding"
+        android:fontFamily="@font/roboto_medium"
+        android:hint="@string/coverage_body"
+        android:inputType="numberSigned"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingEnd="@dimen/default_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/neckTextInput" />
+
+    <EditText
+        android:id="@+id/heightTextInput"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_height_input"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:background="@drawable/textinput_background"
+        android:drawableStart="@drawable/drawable_ic_ruler"
+        android:drawablePadding="@dimen/default_padding"
+        android:fontFamily="@font/roboto_medium"
+        android:hint="@string/pet_height"
+        android:inputType="numberSigned"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingEnd="@dimen/default_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bodyTextInput" />
+
+    <Button
+        android:id="@+id/calculateBtn"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@drawable/calculate_button_background"
+        android:elevation="10dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/calculate"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/resultContainer"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/result_container_background"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/calculateBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightTextInput"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/sizeMainText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/size_title"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/sizeValueText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/roboto_medium"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="70sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sizeMainText"
+            tools:text="@string/size_M"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

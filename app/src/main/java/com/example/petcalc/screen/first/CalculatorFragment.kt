@@ -10,7 +10,6 @@ import com.example.petcalc.R
 import com.example.petcalc.databinding.FragmentCalculatorBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
 

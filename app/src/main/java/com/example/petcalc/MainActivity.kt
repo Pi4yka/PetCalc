@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.petcalc.databinding.ActivityMainBinding
 import com.example.petcalc.screen.first.CalculatorFragment
+import com.example.petcalc.screen.second.HistoryFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,10 +17,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainActivityBinding = ActivityMainBinding.inflate(layoutInflater)
-        val view = mainActivityBinding.root
-        setContentView(view)
-        val calculatorFragment = CalculatorFragment()
-        setCurrentFragment(calculatorFragment)
+        setContentView(mainActivityBinding.root)
+        setCurrentFragment(CalculatorFragment())
+
+        mainActivityBinding.bottomNavigationBar.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.bottom_navigationbar_calculator -> setCurrentFragment(CalculatorFragment())
+                R.id.bottom_navigationbar_history -> setCurrentFragment(HistoryFragment())
+            }
+            true
+        }
     }
 
     private fun setCurrentFragment(

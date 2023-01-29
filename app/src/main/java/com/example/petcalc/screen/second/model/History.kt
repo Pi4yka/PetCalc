@@ -5,7 +5,8 @@ data class History(
     val neckSize: Int,
     val bodySize: Int,
     val heightSize: Int,
-    val sizeText: String
+    val sizeText: String,
+    var visibility: Boolean = false
 )
 
 fun getMockSizeList(): List<History> {

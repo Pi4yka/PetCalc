@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.*
 import com.example.petcalc.R
 import com.example.petcalc.databinding.FragmentCalculatorBinding
+import com.example.petcalc.screen.second.HowToFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

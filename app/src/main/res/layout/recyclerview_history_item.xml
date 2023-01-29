@@ -1,59 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/historyLayout"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:elevation="@dimen/large_margin">
+    android:layout_height="100dp"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp">
 
-    <TextView
-        android:id="@+id/nicknameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/neckTextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Kirby" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/neckTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bodyTextView"
-        app:layout_constraintStart_toEndOf="@+id/nicknameTextView"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="50cm" />
+            <TextView
+                android:id="@+id/nicknameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/large_font_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/neckTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Kirby" />
 
-    <TextView
-        android:id="@+id/bodyTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/heightTextView"
-        app:layout_constraintStart_toEndOf="@+id/neckTextView"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="60cm" />
+            <TextView
+                android:id="@+id/neckTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bodyTextView"
+                app:layout_constraintStart_toEndOf="@+id/nicknameTextView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="50cm" />
 
-    <TextView
-        android:id="@+id/heightTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/sizeTextView"
-        app:layout_constraintStart_toEndOf="@+id/bodyTextView"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="55cm" />
+            <TextView
+                android:id="@+id/bodyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/heightTextView"
+                app:layout_constraintStart_toEndOf="@+id/neckTextView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="60cm" />
 
-    <TextView
-        android:id="@+id/sizeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/heightTextView"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="M" />
+            <TextView
+                android:id="@+id/heightTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/sizeTextView"
+                app:layout_constraintStart_toEndOf="@+id/bodyTextView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="55cm" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/sizeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/large_font_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/heightTextView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="M" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

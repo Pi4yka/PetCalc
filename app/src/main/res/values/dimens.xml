@@ -6,4 +6,5 @@
     <dimen name="large_margin">32dp</dimen>
     <dimen name="default_height_input">50dp</dimen>
     <dimen name="default_padding">12dp</dimen>
+    <dimen name="large_font_size">30sp</dimen>
 </resources>

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.petcalc.databinding.ActivityMainBinding
 import com.example.petcalc.screen.first.CalculatorFragment
 import com.example.petcalc.screen.second.HistoryFragment
+import com.example.petcalc.screen.second.HowToFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
     }
 
     private fun setCurrentFragment(

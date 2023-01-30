@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/large_font_size"
             android:textStyle="bold"
+            android:textColor="@color/brown"
             app:layout_constraintBottom_toTopOf="@+id/expandedLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -33,6 +34,7 @@
             android:layout_marginEnd="16dp"
             android:textSize="@dimen/large_font_size"
             android:textStyle="bold"
+            android:textColor="@color/brown"
             app:layout_constraintBottom_toTopOf="@+id/expandedLayout"
             app:layout_constraintEnd_toStartOf="@+id/switcherArrow"
             app:layout_constraintTop_toTopOf="parent"
@@ -50,38 +52,80 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/expandedLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
+                android:id="@+id/neckMainTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/coverage_neck"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/small_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
                 android:id="@+id/neckTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/small_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/bodyTextView"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/neckMainTextView"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Neck: 50cm" />
+                tools:text="50cm" />
+
+            <TextView
+                android:id="@+id/mainBodyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:text="@string/coverage_body"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/small_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/neckTextView"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/bodyTextView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/small_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/heightTextView"
-                app:layout_constraintStart_toEndOf="@+id/neckTextView"
+                app:layout_constraintStart_toEndOf="@+id/mainBodyTextView"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="60cm" />
 
             <TextView
-                android:id="@+id/heightTextView"
-                android:layout_width="wrap_content"
+                android:id="@+id/mainHeightTextView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:text="@string/pet_height"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/small_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bodyTextView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/heightTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/small_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/bodyTextView"
+                app:layout_constraintStart_toEndOf="@+id/mainHeightTextView"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="55cm" />
 

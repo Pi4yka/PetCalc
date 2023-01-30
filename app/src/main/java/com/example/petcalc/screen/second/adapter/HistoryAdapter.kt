@@ -31,7 +31,7 @@ class HistoryAdapter(historyFragment: HistoryFragment) :
 
     override fun getItemCount(): Int = historyList.size
 
-    private fun changeArrow(change: Boolean): Int {
+    private fun changeArrow(change: Boolean = false): Int {
         return when (change) {
             true -> R.drawable.ic_arrow_down
             false -> R.drawable.ic_arrow_up
@@ -45,7 +45,7 @@ class HistoryAdapter(historyFragment: HistoryFragment) :
         holder.binding.bodyTextView.text = historyItem.bodySize.toString()
         holder.binding.heightTextView.text = historyItem.heightSize.toString()
         holder.binding.sizeTextView.text = historyItem.sizeText
-
+        holder.binding.switcherArrow.setImageResource(changeArrow(historyItem.visibility))
         val isExpanded: Boolean = historyItem.visibility
         holder.binding.expandedLayout.visibility = if (isExpanded) View.VISIBLE else View.GONE
 

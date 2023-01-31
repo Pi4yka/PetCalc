@@ -33,8 +33,8 @@ class HistoryAdapter(historyFragment: HistoryFragment) :
 
     private fun changeArrow(change: Boolean = false): Int {
         return when (change) {
-            true -> R.drawable.ic_arrow_down
-            false -> R.drawable.ic_arrow_up
+            true -> R.drawable.ic_arrow_up
+            false -> R.drawable.ic_arrow_down
         }
     }
 

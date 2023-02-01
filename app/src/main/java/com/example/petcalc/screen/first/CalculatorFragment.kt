@@ -52,8 +52,7 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
     }
 
     private fun showDialogFragment() {
-
-        val dialog = BottomSheetDialog(this.requireContext())
+        val dialog = BottomSheetDialog(this.requireContext(), R.style.BottomSheetDialogTheme)
         dialog.setContentView(R.layout.fragment_bottomsheet)
         dialog.show()
     }

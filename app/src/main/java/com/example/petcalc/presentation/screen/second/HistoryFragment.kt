@@ -1,4 +1,4 @@
-package com.example.petcalc.screen.second
+package com.example.petcalc.presentation.screen.second
 
 import android.os.Bundle
 import android.view.View
@@ -8,18 +8,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petcalc.R
 import com.example.petcalc.databinding.FragmentHistoryBinding
-import com.example.petcalc.screen.second.adapter.HistoryAdapter
-import com.example.petcalc.screen.second.model.History
-import com.example.petcalc.screen.second.model.getMockSizeList
+import com.example.petcalc.presentation.screen.second.list.HistoryAdapter
+import com.example.petcalc.presentation.screen.second.list.getMockHistoryItemList
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HistoryFragment : Fragment(R.layout.fragment_history) {
+
     private var _binding: FragmentHistoryBinding? = null
     private val bindingHistoryFragment get() = _binding!!
+
     private val viewModel: HistoryFragmentViewModel by viewModels()
-    private val historyAdapter = HistoryAdapter(this)
-    private val historyList: List<History> = getMockSizeList()
+    private val historyAdapter = HistoryAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -28,7 +28,7 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
         val recyclerView: RecyclerView = bindingHistoryFragment.recyclerViewHistory
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         recyclerView.adapter = historyAdapter
-        historyAdapter.setList(getMockSizeList())
+        historyAdapter.setList(getMockHistoryItemList())
     }
 
     override fun onDestroyView() {

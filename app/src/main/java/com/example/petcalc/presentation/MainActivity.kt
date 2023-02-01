@@ -1,11 +1,12 @@
-package com.example.petcalc
+package com.example.petcalc.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.petcalc.R
 import com.example.petcalc.databinding.ActivityMainBinding
-import com.example.petcalc.screen.first.CalculatorFragment
-import com.example.petcalc.screen.second.HistoryFragment
+import com.example.petcalc.presentation.screen.first.CalculatorFragment
+import com.example.petcalc.presentation.screen.second.HistoryFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

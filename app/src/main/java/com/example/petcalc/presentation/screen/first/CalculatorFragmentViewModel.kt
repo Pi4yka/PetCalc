@@ -1,4 +1,4 @@
-package com.example.petcalc.screen.first
+package com.example.petcalc.presentation.screen.first
 
 import androidx.annotation.StringRes
 import androidx.lifecycle.MutableLiveData

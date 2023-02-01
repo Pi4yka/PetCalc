@@ -17,4 +17,5 @@
     <string name="size_S">S</string>
     <string name="size_XS">XS</string>
     <string name="error">Error</string>
+    <string name="main_bottom_sheet_dialog_text">Taking measurements</string>
 </resources>

@@ -8,7 +8,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.*
 import com.example.petcalc.R
 import com.example.petcalc.databinding.FragmentCalculatorBinding
-import com.example.petcalc.screen.second.HowToFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -29,6 +28,7 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
 
         viewModel.sizeResult.observe(viewLifecycleOwner, sizeResultObserver)
         bindingCalculatorFragment.calculateBtn.setOnClickListener { onCalculateClicked() }
+        bindingCalculatorFragment.questionButtonView.setOnClickListener { showDialogFragment() }
     }
 
     private fun isInputsEmpty(): Boolean =
@@ -49,6 +49,13 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
         } else {
             Toast.makeText(requireContext(), R.string.enter_sizes, Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun showDialogFragment() {
+
+        val dialog = BottomSheetDialog(this.requireContext())
+        dialog.setContentView(R.layout.fragment_bottomsheet)
+        dialog.show()
     }
 
     override fun onDestroyView() {

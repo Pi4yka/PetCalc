@@ -1,4 +1,4 @@
-package com.example.petcalc.presentation.screen.second.list
+package com.example.petcalc.presentation.screen.history.list
 
 import com.example.petcalc.data.entity.History
 

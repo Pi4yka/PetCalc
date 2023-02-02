@@ -1,4 +1,4 @@
-package com.example.petcalc.presentation.screen.second
+package com.example.petcalc.presentation.screen.history
 
 import android.os.Bundle
 import android.view.View
@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petcalc.R
 import com.example.petcalc.databinding.FragmentHistoryBinding
-import com.example.petcalc.presentation.screen.second.list.HistoryAdapter
-import com.example.petcalc.presentation.screen.second.list.getMockHistoryItemList
+import com.example.petcalc.presentation.screen.history.list.HistoryAdapter
+import com.example.petcalc.presentation.screen.history.list.getMockHistoryItemList
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

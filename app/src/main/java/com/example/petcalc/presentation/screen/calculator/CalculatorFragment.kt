@@ -1,4 +1,4 @@
-package com.example.petcalc.presentation.screen.first
+package com.example.petcalc.presentation.screen.calculator
 
 import android.os.Bundle
 import android.view.View

@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.petcalc.R
 import com.example.petcalc.databinding.ActivityMainBinding
-import com.example.petcalc.presentation.screen.first.CalculatorFragment
-import com.example.petcalc.presentation.screen.second.HistoryFragment
+import com.example.petcalc.presentation.screen.calculator.CalculatorFragment
+import com.example.petcalc.presentation.screen.history.HistoryFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

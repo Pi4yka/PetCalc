@@ -1,4 +1,4 @@
-package com.example.petcalc.presentation.screen.second
+package com.example.petcalc.presentation.screen.history
 
 import androidx.lifecycle.ViewModel
 

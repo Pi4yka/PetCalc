@@ -3,10 +3,9 @@ package com.example.petcalc.data.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "HISTORY")
+@Entity(tableName = "history_table")
 data class History(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val nickname: String,
     val neckSize: Int,
     val bodySize: Int,

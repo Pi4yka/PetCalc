@@ -8,7 +8,7 @@ import com.example.petcalc.data.entity.History
 interface HistoryDao {
 
     @Query("SELECT * FROM history_table")
-    fun getAllHistoryItems(): LiveData<List<History>>
+    fun getAllHistoryItem(): LiveData<List<History>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertHistoryItem(history: History): Long

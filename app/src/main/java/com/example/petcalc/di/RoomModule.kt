@@ -1,7 +1,9 @@
-package com.example.petcalc.data.db
+package com.example.petcalc.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.petcalc.data.db.HistoryDao
+import com.example.petcalc.data.db.HistoryDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,14 +13,20 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class DBModule {
+class RoomModule {
 
     @Singleton
     @Provides
-    fun provideHistoryDatabase(@ApplicationContext context: Context): HistoryDatabase =
+    fun provideDatabase(@ApplicationContext context: Context): HistoryDatabase =
         Room.databaseBuilder(
             context,
             HistoryDatabase::class.java,
             "history_db.db"
         ).build()
+
+    @Singleton
+    @Provides
+    fun provideDao(historyDatabase: HistoryDatabase): HistoryDao =
+        historyDatabase.historyDao()
+
 }

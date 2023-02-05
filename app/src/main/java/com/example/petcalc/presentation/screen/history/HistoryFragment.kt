@@ -28,13 +28,12 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentHistoryBinding.bind(view)
 
-
         val recyclerView: RecyclerView = bindingHistoryFragment.recyclerViewHistory
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         recyclerView.adapter = historyAdapter
         historyAdapter.setList(getMockHistoryItemList())
-    }
 
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

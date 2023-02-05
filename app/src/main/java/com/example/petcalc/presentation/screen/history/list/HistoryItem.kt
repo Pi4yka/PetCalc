@@ -20,7 +20,6 @@ fun History.toItem() = HistoryItem(
     isExpanded = false
 )
 
-
 fun getMockHistoryItemList(): List<HistoryItem> {
     return listOf(
         HistoryItem("Kevin", 45, 38, 36, "M", false),

@@ -20,7 +20,6 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
     private var _binding: FragmentCalculatorBinding? = null
     private val bindingCalculatorFragment get() = _binding!!
     private val viewModel: CalculatorFragmentViewModel by viewModels()
-    private val viewModelHistory: HistoryFragmentViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -76,7 +75,7 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
             heightSize = bindingCalculatorFragment.heightTextInput.text.toString().toInt(),
             sizeText =  bindingCalculatorFragment.sizeValueText.text.toString()
         )
-        viewModelHistory.insertHistory(historyItem)
+        viewModel.insertHistory(historyItem)
     }
 
     override fun onDestroyView() {

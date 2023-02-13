@@ -3,6 +3,7 @@ package com.example.petcalc.presentation.screen.history.list
 import com.example.petcalc.data.entity.HistoryEntity
 
 data class HistoryItem(
+    val id: Int,
     val nickname: String,
     val neckSize: Int,
     val bodySize: Int,
@@ -12,6 +13,7 @@ data class HistoryItem(
 )
 
 fun HistoryEntity.toItem() = HistoryItem(
+    id = id,
     nickname = nickname,
     neckSize = neckSize,
     bodySize = bodySize,
@@ -20,12 +22,4 @@ fun HistoryEntity.toItem() = HistoryItem(
     isExpanded = false
 )
 
-fun getMockHistoryItemList(): List<HistoryItem> {
-    return listOf(
-        HistoryItem("Kevin", 45, 38, 36, "M", false),
-        HistoryItem("Albert", 75, 48, 66, "XL", false),
-        HistoryItem("Maya", 29, 30, 26, "S", false),
-        HistoryItem("Kasper", 55, 48, 46, "L", false),
-    )
-}
 

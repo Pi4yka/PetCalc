@@ -5,13 +5,17 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.petcalc.R
+import com.example.petcalc.data.entity.HistoryEntity
+import com.example.petcalc.data.repository.HistoryRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CalculatorFragmentViewModel @Inject constructor() : ViewModel() {
+class CalculatorFragmentViewModel @Inject constructor(
+    private val historyRepostory: HistoryRepository
+) : ViewModel() {
     val sizeResult: MutableLiveData<Int> by lazy {
         MutableLiveData<Int>()
     }
@@ -32,6 +36,12 @@ class CalculatorFragmentViewModel @Inject constructor() : ViewModel() {
                 else -> R.string.error
             }
             sizeResult.postValue(resId)
+        }
+    }
+
+    fun insertHistory(history: HistoryEntity) {
+        viewModelScope.launch {
+            historyRepostory.saveHistory(history)
         }
     }
 

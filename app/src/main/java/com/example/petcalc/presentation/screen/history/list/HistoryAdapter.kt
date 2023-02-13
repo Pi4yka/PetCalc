@@ -11,7 +11,7 @@ import com.example.petcalc.data.entity.HistoryEntity
 import com.example.petcalc.databinding.RecyclerviewHistoryItemBinding
 import javax.inject.Inject
 
-class HistoryAdapter @Inject constructor(): RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
+class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 
     private var historyList: MutableList<HistoryItem> = mutableListOf()
 
@@ -52,18 +52,8 @@ class HistoryAdapter @Inject constructor(): RecyclerView.Adapter<HistoryAdapter.
         }
     }
 
-    fun setList(): Int = differ.currentList.size
-
-    private val differCallback = object :
-    DiffUtil.ItemCallback<HistoryEntity>(){
-        override fun areItemsTheSame(oldItem: HistoryEntity, newItem: HistoryEntity): Boolean {
-            return oldItem.id == newItem.id
-        }
-
-        override fun areContentsTheSame(oldItem: HistoryEntity, newItem: HistoryEntity): Boolean {
-            return oldItem == newItem
-        }
+    fun setList(newHistorySizeList: List<HistoryItem>) {
+        historyList = newHistorySizeList.toMutableList()
+        notifyDataSetChanged()
     }
-
-    val differ = AsyncListDiffer(this, differCallback)
 }

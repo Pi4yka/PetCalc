@@ -1,6 +1,6 @@
 package com.example.petcalc.presentation.screen.history.list
 
-import com.example.petcalc.data.entity.History
+import com.example.petcalc.data.entity.HistoryEntity
 
 data class HistoryItem(
     val nickname: String,
@@ -11,7 +11,7 @@ data class HistoryItem(
     var isExpanded: Boolean
 )
 
-fun History.toItem() = HistoryItem(
+fun HistoryEntity.toItem() = HistoryItem(
     nickname = nickname,
     neckSize = neckSize,
     bodySize = bodySize,

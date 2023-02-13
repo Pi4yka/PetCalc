@@ -1,18 +1,17 @@
 package com.example.petcalc.data.db
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.petcalc.data.entity.History
+import com.example.petcalc.data.entity.HistoryEntity
 
 @Dao
 interface HistoryDao {
 
-    @Query("SELECT * FROM history_table")
-    fun getAllHistoryItem(): LiveData<List<History>>
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertHistoryItem(history: History): Long
+    fun insertHistory(historyEntity: HistoryEntity)
 
     @Delete
-    suspend fun deleteHistoryItem(history: History)
+    fun deleteHistory(historyEntity: HistoryEntity)
+
+    @Query("SELECT * FROM history_table")
+    fun getAllHistory(): MutableList<HistoryEntity>
 }

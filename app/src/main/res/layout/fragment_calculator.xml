@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
     tools:context=".presentation.screen.calculator.CalculatorFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -144,24 +145,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bodyTextInput" />
 
-    <Button
-        android:id="@+id/calculateBtn"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="@dimen/default_margin"
-        android:background="@drawable/calculate_button_background"
-        android:elevation="10dp"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/calculate"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/resultContainer"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:background="@drawable/result_container_background"
         android:elevation="10dp"
         android:gravity="center"
@@ -181,7 +168,7 @@
             android:text="@string/size_title"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -197,7 +184,7 @@
             android:fontFamily="@font/roboto_medium"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="70sp"
+            android:textSize="55sp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -207,6 +194,35 @@
             tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/calculateBtn"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@drawable/calculate_button_background"
+        android:elevation="10dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/calculate"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/saveHistoryBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@drawable/add_button_background"
+        android:elevation="10dp"
+        android:fontFamily="@font/roboto_medium"
+        android:padding="6dp"
+        android:src="@drawable/ic_add_history_record"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/calculateBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

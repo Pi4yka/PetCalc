@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/rounded_dialog_background">
+    android:background="@drawable/rounded_dialog_background"
+    android:paddingHorizontal="16dp">
 
     <View
         android:id="@+id/sheetDagger"
         android:layout_width="32dp"
         android:layout_height="4dp"
-        android:background="@color/grey_2"
         android:layout_marginTop="6dp"
+        android:background="@drawable/view_shape_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,14 +21,14 @@
         android:id="@+id/mainTextViewMeasurements"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
         android:text="@string/main_bottom_sheet_dialog_text"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="@dimen/large_font_size"
-        android:layout_marginTop="@dimen/default_margin"
-        app:layout_constraintTop_toBottomOf="@+id/sheetDagger"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sheetDagger" />
 
     <ImageView
         android:id="@+id/measurePet"

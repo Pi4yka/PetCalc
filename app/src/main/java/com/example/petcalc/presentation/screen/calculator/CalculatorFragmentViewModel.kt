@@ -40,7 +40,7 @@ class CalculatorFragmentViewModel @Inject constructor(
     }
 
     fun insertHistory(history: HistoryEntity) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             historyRepository.saveHistory(history)
         }
     }

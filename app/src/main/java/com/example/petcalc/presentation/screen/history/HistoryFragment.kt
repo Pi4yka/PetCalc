@@ -49,14 +49,15 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
                 Snackbar.make(view, "Item Deleted", Snackbar.LENGTH_SHORT).apply {
                     setAction("UNDO") {
                         viewModel.insertHistory(historyItem)
+                        historyAdapter.notifyDataSetChanged()
                     }
                     show()
                 }
             }
         }
-        viewModel.fetchHistoryList()
         val itemTouchHelper = ItemTouchHelper(swipeToDeleteCallback)
         itemTouchHelper.attachToRecyclerView(bindingHistoryFragment.recyclerViewHistory)
+        viewModel.fetchHistoryList()
     }
 
     override fun onResume() {

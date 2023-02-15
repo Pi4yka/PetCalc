@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CalculatorFragmentViewModel @Inject constructor(
-    private val historyRepostory: HistoryRepository
+    private val historyRepository: HistoryRepository
 ) : ViewModel() {
     val sizeResult: MutableLiveData<Int> by lazy {
         MutableLiveData<Int>()
@@ -41,7 +41,7 @@ class CalculatorFragmentViewModel @Inject constructor(
 
     fun insertHistory(history: HistoryEntity) {
         viewModelScope.launch {
-            historyRepostory.saveHistory(history)
+            historyRepository.saveHistory(history)
         }
     }
 

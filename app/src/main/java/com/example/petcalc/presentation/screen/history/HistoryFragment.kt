@@ -47,14 +47,15 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
                     sizeText = historyId.sizeText
                 )
                 viewModel.deleteHistoryItem(historyId = historyId.id)
+
                 Snackbar.make(view, "${historyId.nickname} Deleted", Snackbar.LENGTH_SHORT).apply {
                     setAction("UNDO") {
                         viewModel.insertHistory(historyItem)
                         viewModel.fetchHistoryList()
                     }
                     show()
+                    viewModel.fetchHistoryList()
                 }
-                viewModel.fetchHistoryList()
             }
         }
         val itemTouchHelper = ItemTouchHelper(swipeToDeleteCallback)

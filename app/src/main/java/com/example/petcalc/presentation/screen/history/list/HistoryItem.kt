@@ -12,6 +12,15 @@ data class HistoryItem(
     var isExpanded: Boolean
 )
 
+fun HistoryItem.toEntity() = HistoryEntity(
+    id = this.id,
+    nickname = this.nickname,
+    neckSize = this.neckSize,
+    bodySize = this.bodySize,
+    heightSize = this.heightSize,
+    sizeText = this.sizeText
+)
+
 fun HistoryEntity.toItem() = HistoryItem(
     id = id,
     nickname = nickname,

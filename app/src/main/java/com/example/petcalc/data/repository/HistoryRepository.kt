@@ -11,13 +11,8 @@ class HistoryRepository @Inject constructor(
     private val dao: HistoryDao
 ) {
 
-    suspend fun saveHistory(history: HistoryEntity) {
-        withContext(Dispatchers.IO) {
-            dao.insertHistory(history)
-        }
-    }
-
-    suspend fun deleteHistory(history: Int) = dao.deleteHistory(history)
-    suspend fun getAllHistory(): List<HistoryEntity> = dao.getAllHistory()
+     fun saveHistory(history: HistoryEntity) = dao.insertHistory(history)
+     fun deleteHistory(history: Int) = dao.deleteHistory(history)
+     fun getAllHistory(): List<HistoryEntity> = dao.getAllHistory()
 
 }

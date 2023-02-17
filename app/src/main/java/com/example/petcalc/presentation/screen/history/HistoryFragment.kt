@@ -12,6 +12,7 @@ import com.example.petcalc.R
 import com.example.petcalc.data.entity.HistoryEntity
 import com.example.petcalc.databinding.FragmentHistoryBinding
 import com.example.petcalc.presentation.screen.history.list.HistoryAdapter
+import com.example.petcalc.presentation.screen.history.list.toEntity
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,24 +38,14 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
         val swipeToDeleteCallback = object : SwipeToDeleteCallback() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val pos = viewHolder.adapterPosition
-                val historyId = viewModel.historyItems.value?.get(pos)
-                val historyItem = HistoryEntity(
-                    id = historyId!!.id,
-                    nickname = historyId.nickname,
-                    neckSize = historyId.neckSize,
-                    bodySize = historyId.bodySize,
-                    heightSize = historyId.heightSize,
-                    sizeText = historyId.sizeText
-                )
-                viewModel.deleteHistoryItem(historyId = historyId.id)
+                val historyEntity = viewModel.historyItems.value?.get(pos)?.toEntity() ?: return
+                viewModel.deleteHistoryItem(historyId = historyEntity.id)
 
-                Snackbar.make(view, "${historyId.nickname} Deleted", Snackbar.LENGTH_SHORT).apply {
+                Snackbar.make(view, "${historyEntity.nickname} Deleted", Snackbar.LENGTH_SHORT).apply {
                     setAction("UNDO") {
-                        viewModel.insertHistory(historyItem)
-                        viewModel.fetchHistoryList()
+                        viewModel.insertHistory(historyEntity)
                     }
                     show()
-                    viewModel.fetchHistoryList()
                 }
             }
         }

@@ -9,6 +9,7 @@ import com.example.petcalc.presentation.screen.history.list.HistoryItem
 import com.example.petcalc.presentation.screen.history.list.toItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -34,12 +35,14 @@ class HistoryFragmentViewModel @Inject constructor(
     fun deleteHistoryItem(historyId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             historyRepository.deleteHistory(historyId)
+            fetchHistoryList()
         }
     }
 
     fun insertHistory(history: HistoryEntity) {
         viewModelScope.launch(Dispatchers.IO) {
             historyRepository.saveHistory(history)
+            fetchHistoryList()
         }
     }
 

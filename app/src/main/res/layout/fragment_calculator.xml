@@ -74,9 +74,7 @@
         android:id="@+id/nameTextInput"
         android:layout_width="match_parent"
         android:layout_height="@dimen/default_height_input"
-        android:layout_marginStart="@dimen/default_margin"
         android:layout_marginTop="@dimen/large_margin"
-        android:layout_marginEnd="@dimen/default_margin"
         android:background="@drawable/textinput_background"
         android:drawableStart="@drawable/drawable_ic_tag"
         android:drawablePadding="@dimen/default_padding"
@@ -92,9 +90,7 @@
         android:id="@+id/neckTextInput"
         android:layout_width="match_parent"
         android:layout_height="@dimen/default_height_input"
-        android:layout_marginStart="@dimen/default_margin"
         android:layout_marginTop="@dimen/large_margin"
-        android:layout_marginEnd="@dimen/default_margin"
         android:background="@drawable/textinput_background"
         android:drawableStart="@drawable/drawable_ic_ruler"
         android:drawablePadding="@dimen/default_padding"
@@ -111,9 +107,7 @@
         android:id="@+id/bodyTextInput"
         android:layout_width="match_parent"
         android:layout_height="@dimen/default_height_input"
-        android:layout_marginStart="@dimen/default_margin"
         android:layout_marginTop="@dimen/large_margin"
-        android:layout_marginEnd="@dimen/default_margin"
         android:background="@drawable/textinput_background"
         android:drawableStart="@drawable/drawable_ic_ruler"
         android:drawablePadding="@dimen/default_padding"
@@ -130,9 +124,7 @@
         android:id="@+id/heightTextInput"
         android:layout_width="match_parent"
         android:layout_height="@dimen/default_height_input"
-        android:layout_marginStart="@dimen/default_margin"
         android:layout_marginTop="@dimen/large_margin"
-        android:layout_marginEnd="@dimen/default_margin"
         android:background="@drawable/textinput_background"
         android:drawableStart="@drawable/drawable_ic_ruler"
         android:drawablePadding="@dimen/default_padding"
@@ -195,7 +187,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/calculateBtn"
         android:layout_width="150dp"
         android:layout_height="40dp"
@@ -209,13 +201,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/saveHistoryBtn"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginBottom="@dimen/default_margin"
         android:background="@drawable/add_button_background"
         android:elevation="10dp"
+        android:clickable="true"
+        android:focusable="true"
         android:fontFamily="@font/roboto_medium"
         android:padding="6dp"
         android:src="@drawable/ic_add_history_record"

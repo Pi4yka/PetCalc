@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         mainActivityBinding.bottomNavigationBar.setOnItemSelectedListener {
             when (it.itemId) {
+                mainActivityBinding.bottomNavigationBar.selectedItemId -> {}
                 R.id.bottom_navigationbar_calculator -> setCurrentFragment(CalculatorFragment())
                 R.id.bottom_navigationbar_history -> setCurrentFragment(HistoryFragment())
             }
@@ -29,10 +30,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setCurrentFragment(
-        fragment: Fragment
-    ) = supportFragmentManager.beginTransaction().apply {
-        replace(R.id.flFragment, fragment)
-        commit()
+    private fun setCurrentFragment(fragment: Fragment)  {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.flFragment, fragment)
+            commit()
+        }
     }
 }

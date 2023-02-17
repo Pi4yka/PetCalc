@@ -37,6 +37,8 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
         bindingCalculatorFragment.saveHistoryBtn.setOnClickListener {
             if (isInputsEmpty()) {
                 saveHistory()
+            } else {
+                Toast.makeText(requireContext(), R.string.enter_sizes, Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -67,13 +69,13 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
         dialog.show()
     }
 
-    private fun saveHistory(){
+    private fun saveHistory() {
         val historyItem = HistoryEntity(
             nickname = bindingCalculatorFragment.nameTextInput.text.toString(),
             neckSize = bindingCalculatorFragment.neckTextInput.text.toString().toInt(),
             bodySize = bindingCalculatorFragment.bodyTextInput.text.toString().toInt(),
             heightSize = bindingCalculatorFragment.heightTextInput.text.toString().toInt(),
-            sizeText =  bindingCalculatorFragment.sizeValueText.text.toString()
+            sizeText = bindingCalculatorFragment.sizeValueText.text.toString()
         )
         viewModel.insertHistory(historyItem)
     }

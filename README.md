@@ -1,4 +1,4 @@
-![Header](readme/readme_logo.png)
+!<img src="readme/readme_logo.png" width="30%" height="auto" />
 
 <h1 align="center">PetCalc</h1>
 
@@ -11,7 +11,6 @@ PetCalc -  Android приложение для расчета размеров �
 
 <p align="center">
   <img src="readme/screenshot_1.jpg" width="30%" height="auto">
-  <img src="readme/screenshot_2.jpg" width="30%" height="auto">
   <img src="readme/screenshot_3.jpg" width="30%" height="auto">
   <img src="readme/screenshot_4.jpg" width="30%" height="auto">
 </p>

@@ -9,6 +9,7 @@
     <string name="calculate">Calculate</string>
     <string name="size_title">"Your pet's size"</string>
     <string name="enter_sizes">Enter Sizes!</string>
+    <string name="enter_data">Enter Data to save!</string>
     <string name="bottom_navigationbar_calculate">Calculator</string>
     <string name="bottom_navigationbar_history">History</string>
     <string name="size_XL">XL</string>

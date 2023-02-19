@@ -2,16 +2,14 @@ package com.example.petcalc.presentation.screen.calculator
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.*
 import com.example.petcalc.R
 import com.example.petcalc.data.entity.HistoryEntity
 import com.example.petcalc.databinding.FragmentCalculatorBinding
-import com.example.petcalc.presentation.screen.history.HistoryFragmentViewModel
-import com.example.petcalc.presentation.screen.history.list.HistoryItem
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,10 +33,12 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
         bindingCalculatorFragment.questionButtonView.setOnClickListener { showDialogFragment() }
 
         bindingCalculatorFragment.saveHistoryBtn.setOnClickListener {
-            if (isInputsEmpty()) {
+            if (isInputsEmpty() && bindingCalculatorFragment.nameTextInput.text.toString()
+                    .isNotEmpty()
+            ) {
                 saveHistory()
             } else {
-                Toast.makeText(requireContext(), R.string.enter_sizes, Toast.LENGTH_SHORT).show()
+                Snackbar.make(view, R.string.enter_data, Snackbar.LENGTH_SHORT).show()
             }
         }
     }
@@ -59,7 +59,7 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
                 bodyHeight = bindingCalculatorFragment.heightTextInput.text.toString().toInt()
             )
         } else {
-            Toast.makeText(requireContext(), R.string.enter_sizes, Toast.LENGTH_SHORT).show()
+            Snackbar.make(requireView(), R.string.enter_sizes, Snackbar.LENGTH_SHORT).show()
         }
     }
 

@@ -9,6 +9,7 @@
     <string name="calculate">Рассчитать</string>
     <string name="size_title">Размер вашего питомца</string>
     <string name="enter_sizes">Введите размеры!</string>
+    <string name="enter_data">Введите данные для сохранения!</string>
     <string name="bottom_navigationbar_calculate">Калькулятор</string>
     <string name="bottom_navigationbar_history">История</string>
     <string name="size_XL">XL</string>

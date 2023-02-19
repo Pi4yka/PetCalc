@@ -22,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/default_margin"
+        android:fontFamily="@font/roboto_medium"
         android:text="@string/main_bottom_sheet_dialog_text"
         android:textAlignment="center"
         android:textColor="@color/black"

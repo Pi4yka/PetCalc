@@ -11,6 +11,7 @@
     <string name="enter_sizes">Введите размеры!</string>
     <string name="save_data">%1$s сохранен!</string>
     <string name="enter_data">Введите данные для сохранения!</string>
+    <string name="calculate_size">Рассчитайте размер!</string>
     <string name="delete_item">%1$s Удален</string>
     <string name="undo">Вернуть</string>
     <string name="bottom_navigationbar_calculate">Калькулятор</string>

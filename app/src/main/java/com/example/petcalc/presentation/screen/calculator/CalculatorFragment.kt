@@ -33,8 +33,7 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
         bindingCalculatorFragment.questionButtonView.setOnClickListener { showDialogFragment() }
 
         bindingCalculatorFragment.saveHistoryBtn.setOnClickListener {
-            if (isInputsEmpty() && bindingCalculatorFragment.nameTextInput.text.toString()
-                    .isNotEmpty()
+            if (isInputsEmptySave() && bindingCalculatorFragment.sizeValueText.text.toString().isNotEmpty()
             ) {
                 saveHistory()
                 Snackbar.make(
@@ -45,11 +44,19 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
                     ),
                     Snackbar.LENGTH_SHORT
                 ).show()
+            } else if (isInputsEmpty() && bindingCalculatorFragment.sizeValueText.text.toString().isEmpty()) {
+                Snackbar.make(view, R.string.calculate_size, Snackbar.LENGTH_SHORT).show()
             } else {
                 Snackbar.make(view, R.string.enter_data, Snackbar.LENGTH_SHORT).show()
             }
         }
     }
+
+    private fun isInputsEmptySave(): Boolean =
+        bindingCalculatorFragment.neckTextInput.text.toString().trim().isNotEmpty() &&
+                bindingCalculatorFragment.bodyTextInput.text.toString().trim().isNotEmpty() &&
+                bindingCalculatorFragment.heightTextInput.text.toString().trim().isNotEmpty() &&
+                bindingCalculatorFragment.nameTextInput.text.toString().trim().isNotEmpty()
 
     private fun isInputsEmpty(): Boolean =
         bindingCalculatorFragment.neckTextInput.text.toString().isNotEmpty() &&

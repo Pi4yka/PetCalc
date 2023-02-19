@@ -1,4 +1,6 @@
-!<img src="readme/readme_logo.png" width="30%" height="auto" />
+<p align="center">
+  <img width="460" height="300" src="readme/readme_logo.png">
+</p>
 
 <h1 align="center">PetCalc</h1>
 

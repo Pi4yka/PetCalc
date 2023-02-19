@@ -1,7 +1,6 @@
 package com.example.petcalc.presentation.screen.history
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -9,9 +8,9 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petcalc.R
-import com.example.petcalc.data.entity.HistoryEntity
 import com.example.petcalc.databinding.FragmentHistoryBinding
 import com.example.petcalc.presentation.screen.history.list.HistoryAdapter
+import com.example.petcalc.presentation.screen.history.list.SwipeToDeleteCallback
 import com.example.petcalc.presentation.screen.history.list.toEntity
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint

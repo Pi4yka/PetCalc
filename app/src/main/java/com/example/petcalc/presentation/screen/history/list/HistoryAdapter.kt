@@ -3,18 +3,14 @@ package com.example.petcalc.presentation.screen.history.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petcalc.R
-import com.example.petcalc.data.entity.HistoryEntity
 import com.example.petcalc.databinding.RecyclerviewHistoryItemBinding
-import com.example.petcalc.presentation.screen.history.util.HistoryDiffUtil
-import javax.inject.Inject
 
-class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
+class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 
-    private var historyList: MutableList<HistoryItem> = mutableListOf()
+    private var historyList: List<HistoryItem> = mutableListOf()
 
     class HistoryViewHolder(val binding: RecyclerviewHistoryItemBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -54,9 +50,9 @@ class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
     }
 
     fun setList(newHistorySizeList: List<HistoryItem>) {
-        val diffUtil = HistoryDiffUtil(historyList,newHistorySizeList.toMutableList())
+        val diffUtil = HistoryDiffUtil(historyList, newHistorySizeList)
         val diffResult = DiffUtil.calculateDiff(diffUtil)
-        historyList = newHistorySizeList.toMutableList()
+        historyList = newHistorySizeList
         diffResult.dispatchUpdatesTo(this)
     }
 }

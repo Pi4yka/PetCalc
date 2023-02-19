@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="460" height="300" src="readme/readme_logo.png">
+  <img width="30%" height="auto" src="readme/readme_logo.png">
 </p>
 
 <h1 align="center">PetCalc</h1>

@@ -40,9 +40,9 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
                 val pos = viewHolder.adapterPosition
                 val historyEntity = viewModel.historyItems.value?.get(pos)?.toEntity() ?: return
                 viewModel.deleteHistoryItem(historyId = historyEntity.id)
-
-                Snackbar.make(view, "${historyEntity.nickname} Deleted", Snackbar.LENGTH_SHORT).apply {
-                    setAction("UNDO") {
+                val deleteItem : String = getString(R.string.delete_item, historyEntity.nickname)
+                Snackbar.make(view, deleteItem, Snackbar.LENGTH_SHORT).apply {
+                    setAction(R.string.undo) {
                         viewModel.insertHistory(historyEntity)
                     }
                     show()

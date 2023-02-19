@@ -37,6 +37,14 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
                     .isNotEmpty()
             ) {
                 saveHistory()
+                Snackbar.make(
+                    view,
+                    getString(
+                        R.string.save_data,
+                        bindingCalculatorFragment.nameTextInput.text.toString()
+                    ),
+                    Snackbar.LENGTH_SHORT
+                ).show()
             } else {
                 Snackbar.make(view, R.string.enter_data, Snackbar.LENGTH_SHORT).show()
             }

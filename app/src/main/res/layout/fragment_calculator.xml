@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screen.first.CalculatorFragment">
+    android:paddingHorizontal="16dp"
+    tools:context=".presentation.screen.calculator.CalculatorFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +45,17 @@
             app:layout_constraintStart_toEndOf="@+id/dogeImageView"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/questionButtonView"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_question"
+            android:background="@drawable/bottom_sheet_background_button"
+            android:elevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -63,9 +76,7 @@
         android:id="@+id/nameTextInput"
         android:layout_width="match_parent"
         android:layout_height="@dimen/default_height_input"
-        android:layout_marginStart="@dimen/default_margin"
         android:layout_marginTop="@dimen/large_margin"
-        android:layout_marginEnd="@dimen/default_margin"
         android:background="@drawable/textinput_background"
         android:drawableStart="@drawable/drawable_ic_tag"
         android:drawablePadding="@dimen/default_padding"
@@ -81,9 +92,7 @@
         android:id="@+id/neckTextInput"
         android:layout_width="match_parent"
         android:layout_height="@dimen/default_height_input"
-        android:layout_marginStart="@dimen/default_margin"
         android:layout_marginTop="@dimen/large_margin"
-        android:layout_marginEnd="@dimen/default_margin"
         android:background="@drawable/textinput_background"
         android:drawableStart="@drawable/drawable_ic_ruler"
         android:drawablePadding="@dimen/default_padding"
@@ -100,9 +109,7 @@
         android:id="@+id/bodyTextInput"
         android:layout_width="match_parent"
         android:layout_height="@dimen/default_height_input"
-        android:layout_marginStart="@dimen/default_margin"
         android:layout_marginTop="@dimen/large_margin"
-        android:layout_marginEnd="@dimen/default_margin"
         android:background="@drawable/textinput_background"
         android:drawableStart="@drawable/drawable_ic_ruler"
         android:drawablePadding="@dimen/default_padding"
@@ -119,9 +126,7 @@
         android:id="@+id/heightTextInput"
         android:layout_width="match_parent"
         android:layout_height="@dimen/default_height_input"
-        android:layout_marginStart="@dimen/default_margin"
         android:layout_marginTop="@dimen/large_margin"
-        android:layout_marginEnd="@dimen/default_margin"
         android:background="@drawable/textinput_background"
         android:drawableStart="@drawable/drawable_ic_ruler"
         android:drawablePadding="@dimen/default_padding"
@@ -134,24 +139,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bodyTextInput" />
 
-    <Button
-        android:id="@+id/calculateBtn"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="@dimen/default_margin"
-        android:background="@drawable/calculate_button_background"
-        android:elevation="10dp"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/calculate"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/resultContainer"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:background="@drawable/result_container_background"
         android:elevation="10dp"
         android:gravity="center"
@@ -171,7 +162,7 @@
             android:text="@string/size_title"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -187,7 +178,7 @@
             android:fontFamily="@font/roboto_medium"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="70sp"
+            android:textSize="55sp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -197,6 +188,37 @@
             tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calculateBtn"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@drawable/calculate_button_background"
+        android:elevation="10dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/calculate"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/saveHistoryBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@drawable/add_button_background"
+        android:elevation="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/roboto_medium"
+        android:padding="6dp"
+        android:src="@drawable/ic_add_history_record"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/calculateBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

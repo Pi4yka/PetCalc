@@ -5,12 +5,14 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="rippleColor">#BEBFC5</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="brown">#B56F40</color>
     <color name="green">#0FAF51</color>
     <color name="blue">#475BD8</color>
     <color name="grey">#F3F4F6</color>
+    <color name="grey_2">#DFDEE2</color>
     <color name="greyFont">#999999</color>
     <color name="whiteBackground"> #FFFFFFFF </color>
     <color name="buttonCalc"> #475BD8 </color>

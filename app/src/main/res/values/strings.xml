@@ -9,10 +9,18 @@
     <string name="calculate">Calculate</string>
     <string name="size_title">"Your pet's size"</string>
     <string name="enter_sizes">Enter Sizes!</string>
+    <string name="enter_data">Enter Data to save!</string>
+    <string name="calculate_size">Calculate Size!</string>
+    <string name="save_data">%1$s is saved!</string>
+    <string name="delete_item">%1$s Deleted</string>
+    <string name="undo">Undo</string>
+    <string name="bottom_navigationbar_calculate">Calculator</string>
+    <string name="bottom_navigationbar_history">History</string>
     <string name="size_XL">XL</string>
     <string name="size_L">L</string>
     <string name="size_M">M</string>
     <string name="size_S">S</string>
     <string name="size_XS">XS</string>
     <string name="error">Error</string>
+    <string name="main_bottom_sheet_dialog_text">Taking measurements</string>
 </resources>
